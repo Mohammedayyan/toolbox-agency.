@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      let t = 'light';
+      try {
+        t = localStorage.getItem('theme');
+      } catch (e) {}
+      t = t || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>Mohammed Ayyan | AI Automation & Systems Consultant</title>
+  <meta name="description" content="Portfolio of Mohammed Ayyan, AI Automation Systems Consultant. Explore interactive simulations and real case studies.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNY9C2360J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNY9C2360J');
+  </script>
+</head>
+<body>
+
+<header class="site-header is-scrolled" id="nav">
+  <a href="index.html" class="logo">
+    <img src="images/brand/tbx-icon.svg" alt="" width="32" height="32">
+    <span class="logo-text">Toolbox <span>Studio</span></span>
+  </a>
+  <nav aria-label="Main">
+    <ul class="nav-list" id="nav-list">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="portfolio.html" class="is-active">Portfolio</a></li>
+      <li><a href="store.html">Templates</a></li>
+      <li><a href="https://medium.com/@mohammedayyan1" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="nav-mobile-only"><a href="appointment.html">Book a call</a></li>
+    </ul>
+  </nav>
+  <div class="nav-end">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a href="appointment.html" class="btn btn-primary btn-sm">Book a call</a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Founder & Operations Engineer</p>
+      <h1>Mohammed Ayyan</h1>
+      <p class="lead">AI Automation & Systems Consultant helping businesses replace manual bottleneck workflows with autonomous pipelines, custom CRMs, and unified workspaces.</p>
+      <div class="hero-actions" style="margin-top: 32px;">
+        <a href="#sandbox" class="btn btn-primary">Try Automation Sandbox</a>
+        <a href="appointment.html" class="btn btn-secondary">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Sandbox ("l3ba") Section -->
+  <section class="section section-soft" id="sandbox" style="position: relative; overflow: hidden;">
+    <div class="container">
+      <div class="section-head text-center" style="max-width: 680px; margin: 0 auto 48px;">
+        <p class="eyebrow">Interactive Simulation</p>
+        <h2>AI Automation Sandbox</h2>
+        <p>Design a custom automation sequence below to see how data flows from trigger to execution in real-time. Choose your nodes and run the dry run.</p>
+      </div>
+
+      <div class="sandbox-grid">
+        <!-- Interactive Controls -->
+        <div class="sandbox-controls">
+          <!-- Step 1: Trigger -->
+          <div class="control-group">
+            <span class="group-badge">1. Choose Input Trigger</span>
+            <div class="node-options" data-group="trigger">
+              <button class="node-opt-btn active" data-id="whatsapp_msg" data-label="WhatsApp Inquiry">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                <div class="opt-text">
+                  <strong>WhatsApp Msg</strong>
+                  <span>"Hi, I want a systems audit..."</span>
+                </div>
+              </button>
+              <button class="node-opt-btn" data-id="web_form" data-label="Website Form">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/></svg>
+                <div class="opt-text">
+                  <strong>Lead Form</strong>
+                  <span>Submission: Name, Email, Budget</span>
+                </div>
+              </button>
+              <button class="node-opt-btn" data-id="payment_event" data-label="Stripe Purchase">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                <div class="opt-text">
+                  <strong>Stripe Payment</strong>
+                  <span>Purchase: Freelancer OS ($29)</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Processing -->
+          <div class="control-group">
+            <span class="group-badge">2. Choose AI Logic</span>
+            <div class="node-options" data-group="processing">
+              <button class="node-opt-btn active" data-id="gemini_agent" data-label="Gemini Flash Agent">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                <div class="opt-text">
+                  <strong>Gemini AI Engine</strong>
+                  <span>Extract info, qualify, and draft</span>
+                </div>
+              </button>
+              <button class="node-opt-btn" data-id="router_agent" data-label="Dynamic Router">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+                <div class="opt-text">
+                  <strong>Workflow Router</strong>
+                  <span>Check availability & route tier</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Destination -->
+          <div class="control-group">
+            <span class="group-badge">3. Choose Output Action</span>
+            <div class="node-options" data-group="action">
+              <button class="node-opt-btn active" data-id="notion_crm" data-label="Notion Sync">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                <div class="opt-text">
+                  <strong>Notion CRM</strong>
+                  <span>Add record, set lead stage</span>
+                </div>
+              </button>
+              <button class="node-opt-btn" data-id="wa_reply" data-label="WhatsApp Dispatcher">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+                <div class="opt-text">
+                  <strong>WhatsApp Auto-Send</strong>
+                  <span>Send personalized calendar slot</span>
+                </div>
+              </button>
+              <button class="node-opt-btn" data-id="slack_alert" data-label="Slack Broadcast">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+                <div class="opt-text">
+                  <strong>Slack & Gmail Alert</strong>
+                  <span>Ping internal ops team channel</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulation Visualization -->
+        <div class="sandbox-visual">
+          <div class="canvas-wrapper">
+            <div class="grid-overlay"></div>
+            
+            <svg class="canvas-svg" id="canvas-svg">
+              <!-- Animated connection path 1 -->
+              <path id="path-trigger-ai" d="" stroke="rgba(77, 97, 255, 0.2)" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+              <path id="pulse-trigger-ai" d="" stroke="url(#blue-purple-grad)" stroke-width="4" fill="none" stroke-dasharray="12 180" stroke-dashoffset="0" style="display: none;"/>
+
+              <!-- Animated connection path 2 -->
+              <path id="path-ai-action" d="" stroke="rgba(157, 80, 255, 0.2)" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+              <path id="pulse-ai-action" d="" stroke="url(#blue-purple-grad)" stroke-width="4" fill="none" stroke-dasharray="12 180" stroke-dashoffset="0" style="display: none;"/>
+
+              <defs>
+                <linearGradient id="blue-purple-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#4D61FF" />
+                  <stop offset="100%" stop-color="#9D50FF" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <!-- Node Visual Representatives -->
+            <div class="visual-node trigger-node active-pulse" id="vis-trigger">
+              <div class="node-icon-glow"></div>
+              <div class="node-inner">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                <span class="label">WhatsApp Msg</span>
+              </div>
+            </div>
+
+            <div class="visual-node ai-node" id="vis-ai">
+              <div class="node-icon-glow"></div>
+              <div class="node-inner">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                <span class="label">Gemini AI Engine</span>
+              </div>
+            </div>
+
+            <div class="visual-node action-node" id="vis-action">
+              <div class="node-icon-glow"></div>
+              <div class="node-inner">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                <span class="label">Notion CRM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-controls">
+            <button class="btn btn-primary w-full" id="run-sim-btn">
+              <span>Run Automated Simulation</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="margin-left: 8px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+          </div>
+
+          <!-- Log Console -->
+          <div class="console-wrapper">
+            <div class="console-header">
+              <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+              <span class="title">SYSTEM PROCESS CONSOLE</span>
+              <span class="status-indicator" id="console-status">IDLE</span>
+            </div>
+            <div class="console-body" id="console-log">
+              <div class="log-line system">&gt;&gt; Ready to execute AI workflow. Click "Run Automated Simulation".</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="section" id="cases">
+    <div class="container">
+      <div class="section-head text-center" style="max-width: 600px; margin: 0 auto 64px;">
+        <p class="eyebrow">Case Studies</p>
+        <h2>Systems in Action</h2>
+        <p>Explore real projects and custom setups designed to coordinate teams and scale client operations.</p>
+      </div>
+
+      <div class="case-studies-grid">
+        <!-- Case 1 -->
+        <div class="case-study-card">
+          <div class="case-img-container">
+            <img src="images/atlas-core-thumb.png" alt="Atlas Core Operations Dashboard" onerror="this.src='images/111.png'">
+            <span class="project-tag">Operations & HCM</span>
+          </div>
+          <div class="case-study-body">
+            <h3>Atlas Core: Distributed Field Operations Ecosystem</h3>
+            <p class="case-desc">Designed and engineered a centralized tracking, verification, and payroll dashboard for remote distributed teams. Unified fields that traditionally depended on scattered messages and offline spreadsheets into a single, responsive operational workspace.</p>
+            <div class="meta-tags">
+              <span class="tag">Notion Databases</span>
+              <span class="tag">API Integration</span>
+              <span class="tag">Security Rules</span>
+              <span class="tag">Automated Syncing</span>
+            </div>
+            <a href="https://app.notion.com/p/Mohammed-Ayyan-AI-Automation-Systems-Consultant-32a628fc55018089ae44c1c1f4ea0da1?source=copy_link" target="_blank" rel="noopener" class="case-btn">
+              Read Notion Documentation 
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-study-card">
+          <div class="case-img-container">
+            <div class="case-placeholder-grad purple-grad">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/><path d="M12 2v20"/></svg>
+            </div>
+            <span class="project-tag">AI Agent</span>
+          </div>
+          <div class="case-study-body">
+            <h3>WhatsApp AI Receptionist & Appointment Scheduler</h3>
+            <p class="case-desc">Implemented an autonomous AI receptionist system for local services. Using Gemini API pipelines, the receptionist parses incoming audio and text messages, identifies client requirements, extracts parameters, evaluates active calendar availability, and coordinates booking confirmation automatically.</p>
+            <div class="meta-tags">
+              <span class="tag">Gemini API</span>
+              <span class="tag">WhatsApp API</span>
+              <span class="tag">Calendar Sync</span>
+              <span class="tag">Natural Language</span>
+            </div>
+            <a href="appointment.html" class="case-btn">
+              Inquire about AI agents
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="case-study-card">
+          <div class="case-img-container">
+            <div class="case-placeholder-grad blue-grad">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><rect x="8" y="10" width="32" height="28" rx="3"/><path d="M16 18h16M16 24h10"/></svg>
+            </div>
+            <span class="project-tag">CRM & Workflows</span>
+          </div>
+          <div class="case-study-body">
+            <h3>Unified Notion CRM & Accounting Automation Suite</h3>
+            <p class="case-desc">Replaced fragmented local tools (Excel, WhatsApp, manual notebooks) with a unified workspace. Built custom pipelines that dynamically import invoicing data, track lead interactions, and trigger automated warnings when client billing milestones are due.</p>
+            <div class="meta-tags">
+              <span class="tag">Custom CRM</span>
+              <span class="tag">Financial Tracking</span>
+              <span class="tag">Webhook Hub</span>
+              <span class="tag">Notion OS</span>
+            </div>
+            <a href="store.html" class="case-btn">
+              Browse Systems Templates
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-soft text-center" style="padding: 80px 0;">
+    <div class="container" style="max-width: 600px;">
+      <h2>Ready to streamline your operational systems?</h2>
+      <p style="margin: 16px 0 32px; color: var(--muted);">Let's discuss how we can consolidate your operations, connect your data silos, and integrate custom AI agents into your business.</p>
+      <a href="appointment.html" class="btn btn-primary">Book a free 30-min discovery call</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col brand-col">
+        <a href="#" class="logo">
+          <img src="favicon.svg" alt="Toolbox Studio logo">
+          <span class="logo-text">Toolbox<span> Studio</span></span>
+        </a>
+        <p class="footer-brand-desc">We design and build digital products and operations systems that help growing businesses run smoothly.</p>
+        <span class="footer-copy">© 2026 Toolbox Studio. All rights reserved.</span>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#process">Process</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-nav-list">
+          <li><a href="service-systems.html">Business Systems</a></li>
+          <li><a href="service-ux.html">UX Design</a></li>
+          <li><a href="service-audit.html">UX Audit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-nav-list">
+          <li><a href="store.html">Templates</a></li>
+          <li><a href="https://medium.com/@mohammedayyan1" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="appointment.html">Book a free call</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/212660926450" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><span>WhatsApp</span></a>
+
+<!-- Scripts -->
+<script src="site.js?v=5"></script>
+<script src="cookie-banner.js?v=6"></script>
+
+<!-- Interactive Automation Sandbox Engine -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Config state
+  let config = {
+    trigger: 'whatsapp_msg',
+    processing: 'gemini_agent',
+    action: 'notion_crm'
+  };
+
+  // Node details (SVG icons & info)
+  const nodeDetails = {
+    whatsapp_msg: {
+      label: 'WhatsApp Msg',
+      icon: '<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>'
+    },
+    web_form: {
+      label: 'Lead Form',
+      icon: '<rect x="3" y="4" width="18" height="16" rx="2" ry="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/>'
+    },
+    payment_event: {
+      label: 'Stripe Payment',
+      icon: '<rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/>'
+    },
+    gemini_agent: {
+      label: 'Gemini AI Engine',
+      icon: '<path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>'
+    },
+    router_agent: {
+      label: 'Workflow Router',
+      icon: '<path d="M4 12h16M14 6l6 6-6 6"/>'
+    },
+    notion_crm: {
+      label: 'Notion CRM',
+      icon: '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>'
+    },
+    wa_reply: {
+      label: 'WhatsApp Auto-Send',
+      icon: '<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>'
+    },
+    slack_alert: {
+      label: 'Slack Alert',
+      icon: '<path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>'
+    }
+  };
+
+  const optionBtns = document.querySelectorAll('.node-opt-btn');
+  const visTrigger = document.getElementById('vis-trigger');
+  const visAi = document.getElementById('vis-ai');
+  const visAction = document.getElementById('vis-action');
+
+  const pathTriggerAi = document.getElementById('path-trigger-ai');
+  const pulseTriggerAi = document.getElementById('pulse-trigger-ai');
+  const pathAiAction = document.getElementById('path-ai-action');
+  const pulseAiAction = document.getElementById('pulse-ai-action');
+
+  const runBtn = document.getElementById('run-sim-btn');
+  const consoleLog = document.getElementById('console-log');
+  const consoleStatus = document.getElementById('console-status');
+
+  let isRunning = false;
+
+  // Handle configuration selection
+  optionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (isRunning) return; // Prevent selection changes during simulation run
+
+      const parentOptions = btn.parentElement;
+      const groupName = parentOptions.getAttribute('data-group');
+      const optId = btn.getAttribute('data-id');
+      const optLabel = btn.getAttribute('data-label');
+
+      // Update active btn classes
+      parentOptions.querySelectorAll('.node-opt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update configuration state
+      config[groupName] = optId;
+
+      // Update visual nodes content
+      let targetNode = null;
+      if (groupName === 'trigger') targetNode = visTrigger;
+      else if (groupName === 'processing') targetNode = visAi;
+      else if (groupName === 'action') targetNode = visAction;
+
+      if (targetNode) {
+        const itemInfo = nodeDetails[optId];
+        targetNode.querySelector('.icon').innerHTML = itemInfo.icon;
+        targetNode.querySelector('.label').textContent = itemInfo.label;
+        
+        // Dynamic animation pop
+        targetNode.classList.add('node-updated');
+        setTimeout(() => targetNode.classList.remove('node-updated'), 300);
+      }
+
+      // Add log about design update
+      addLogLine('system', `Design Updated: ${groupName.toUpperCase()} set to [${optLabel}]`);
+      drawSVGConnections();
+    });
+  });
+
+  // Calculate and draw dynamic connection paths in SVG canvas
+  function drawSVGConnections() {
+    const wrapRect = document.querySelector('.canvas-wrapper').getBoundingClientRect();
+    
+    const rT = visTrigger.getBoundingClientRect();
+    const rA = visAi.getBoundingClientRect();
+    const rO = visAction.getBoundingClientRect();
+
+    // Node centers relative to wrapRect
+    const tX = (rT.left + rT.width / 2) - wrapRect.left;
+    const tY = (rT.top + rT.height / 2) - wrapRect.top;
+
+    const aX = (rA.left + rA.width / 2) - wrapRect.left;
+    const aY = (rA.top + rA.height / 2) - wrapRect.top;
+
+    const oX = (rO.left + rO.width / 2) - wrapRect.left;
+    const oY = (rO.top + rO.height / 2) - wrapRect.top;
+
+    // Draw cubic bezier curve paths for high-premium look
+    const d1 = `M ${tX} ${tY} C ${(tX + aX)/2} ${tY}, ${(tX + aX)/2} ${aY}, ${aX} ${aY}`;
+    const d2 = `M ${aX} ${aY} C ${(aX + oX)/2} ${aY}, ${(aX + oX)/2} ${oY}, ${oX} ${oY}`;
+
+    pathTriggerAi.setAttribute('d', d1);
+    pulseTriggerAi.setAttribute('d', d1);
+
+    pathAiAction.setAttribute('d', d2);
+    pulseAiAction.setAttribute('d', d2);
+  }
+
+  // Draw connections on load & resize
+  setTimeout(drawSVGConnections, 100);
+  window.addEventListener('resize', drawSVGConnections);
+
+  // Print helper for console panel
+  function addLogLine(type, text) {
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const div = document.createElement('div');
+    div.className = `log-line ${type}`;
+    div.innerHTML = `<span class="time">[${time}]</span> <span class="content">${text}</span>`;
+    consoleLog.appendChild(div);
+    consoleLog.scrollTop = consoleLog.scrollHeight;
+  }
+
+  // Main Simulation Timeline
+  runBtn.addEventListener('click', async () => {
+    if (isRunning) return;
+    isRunning = true;
+    runBtn.disabled = true;
+    runBtn.style.opacity = 0.6;
+    consoleStatus.textContent = 'RUNNING';
+    consoleStatus.className = 'status-indicator active';
+
+    // Clear logs
+    consoleLog.innerHTML = '';
+    addLogLine('system', `>> Initializing operational flow simulation...`);
+
+    // Reset visual classes
+    visTrigger.className = 'visual-node trigger-node';
+    visAi.className = 'visual-node ai-node';
+    visAction.className = 'visual-node action-node';
+
+    // Step 1: Trigger Phase
+    await delay(600);
+    visTrigger.classList.add('active-pulse');
+    
+    if (config.trigger === 'whatsapp_msg') {
+      addLogLine('info', `<strong style="color:#25d366">WhatsApp Webhook</strong>: Captured incoming message from client +2126...`);
+      addLogLine('msg', `Content: <i>"Bghit ndir system automations l-khedma diali f Kenitra. Ch7al lwe9t?"</i>`);
+    } else if (config.trigger === 'web_form') {
+      addLogLine('info', `<strong style="color:var(--blue)">Lead Form Capture</strong>: Form submission parsed successfully.`);
+      addLogLine('msg', `Submission details: Name="Omar El Alaoui", Email="omar@corp.ma", Budget="Enterprise"`);
+    } else if (config.trigger === 'payment_event') {
+      addLogLine('info', `<strong style="color:#00D67D">Stripe Webhook Event</strong>: checkout.session.completed received.`);
+      addLogLine('msg', `Billing event details: Product="Freelancer OS", Amount="$29.00 USD", Transaction_ID="tx_8F923..."`);
+    }
+
+    // Trigger pulse 1
+    await delay(800);
+    pulseTriggerAi.style.display = 'block';
+    pulseTriggerAi.style.animation = 'pulseMove 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards';
+    addLogLine('system', `Routing data packets to cognition processing node...`);
+
+    await delay(1200);
+    pulseTriggerAi.style.display = 'none';
+    pulseTriggerAi.style.animation = '';
+    visTrigger.classList.remove('active-pulse');
+    visAi.classList.add('active-pulse');
+
+    // Step 2: AI Processing Phase
+    if (config.processing === 'gemini_agent') {
+      addLogLine('ai', `<strong style="color:var(--purple)">Gemini Flash 1.5</strong>: Inspecting context variables & intent analysis.`);
+      await delay(900);
+      
+      if (config.trigger === 'whatsapp_msg') {
+        addLogLine('ai', `Analysis output: [Intent: Request Consultation, Entity: Kenitra Business, Language: Moroccan Darija, Priority: High]`);
+        addLogLine('ai', `Generating customized Darija response with scheduling invitation...`);
+      } else if (config.trigger === 'web_form') {
+        addLogLine('ai', `Analysis output: [Intent: Custom Development, Entity: Omar, Sector: B2B, Qualification: Qualified Tier]`);
+        addLogLine('ai', `Drafting executive proposal summary and formatting credentials...`);
+      } else if (config.trigger === 'payment_event') {
+        addLogLine('ai', `Analysis output: [Event: Store Sale, Client: stripe_cx_2491, Action: Workspace Generation]`);
+        addLogLine('ai', `Generating custom activation key and building unique client workspace profile...`);
+      }
+    } else if (config.processing === 'router_agent') {
+      addLogLine('ai', `<strong style="color:var(--blue)">Workflow Router</strong>: Running decision trees on operational database.`);
+      await delay(900);
+      addLogLine('ai', `Decision: Match parameters with staff slots. Slot available: Friday 10:30 AM.`);
+      addLogLine('ai', `Configuring scheduling payload templates...`);
+    }
+
+    // Trigger pulse 2
+    await delay(1000);
+    pulseAiAction.style.display = 'block';
+    pulseAiAction.style.animation = 'pulseMove 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards';
+    addLogLine('system', `Dispatching final payload instructions to target actions...`);
+
+    await delay(1200);
+    pulseAiAction.style.display = 'none';
+    pulseAiAction.style.animation = '';
+    visAi.classList.remove('active-pulse');
+    visAction.classList.add('active-pulse');
+
+    // Step 3: Action Execution Phase
+    await delay(500);
+    if (config.action === 'notion_crm') {
+      addLogLine('success', `<strong style="color:#f3f4f6">Notion API</strong>: Connected to workspace database.`);
+      addLogLine('success', `Created record: [Title: "Omar El Alaoui (AI Automation Lead)", Stage: "Awaiting Booking Reply"]`);
+    } else if (config.action === 'wa_reply') {
+      addLogLine('success', `<strong style="color:#25d366">WhatsApp Business Dispatcher</strong>: Send request successful.`);
+      addLogLine('success', `Message queued & delivered: <i>"Mar7ba bik! T9der t-booker l-call dialk f had l-link: cal.com/toolbox-studio/30min..."</i>`);
+    } else if (config.action === 'slack_alert') {
+      addLogLine('success', `<strong style="color:#E01E5A">Slack Bot</strong>: Pinged channel #ops-alerts.`);
+      addLogLine('success', `Content: "⚡ New qualified lead processed: Omar El Alaoui ($5,000 budget estimation). Link: [Notion CRM]"`);
+    }
+
+    // Wrap up simulation
+    await delay(1000);
+    addLogLine('system', `>> Workflow complete. All operations executed in 5.3s. (Traditional manual time: ~15-20 mins)`);
+    consoleStatus.textContent = 'SUCCESS';
+    consoleStatus.className = 'status-indicator success';
+    
+    // Animate nodes together showing completed glow
+    visTrigger.classList.add('success-state');
+    visAi.classList.add('success-state');
+    visAction.classList.add('success-state');
+
+    await delay(2000);
+    // Reset buttons
+    isRunning = false;
+    runBtn.disabled = false;
+    runBtn.style.opacity = 1;
+  });
+
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+});
+</script>
+
+</body>
+</html>
