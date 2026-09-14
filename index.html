@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=55">
+  <link rel="stylesheet" href="style.css?v=56">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNY9C2360J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -142,12 +142,41 @@
         <div class="work-filter-bar">
           <button class="filter-btn is-active" data-filter="all" type="button">All Projects</button>
           <button class="filter-btn" data-filter="branding" type="button">Brand Identity</button>
+          <button class="filter-btn" data-filter="websites" type="button">Websites & E-Commerce</button>
           <button class="filter-btn" data-filter="editorial" type="button">Editorial & Print</button>
           <button class="filter-btn" data-filter="systems" type="button">Systems & Digital</button>
         </div>
       </div>
 
       <div class="work-grid" id="work-grid">
+        <!-- Project 0: Para Arredwan E-Commerce Website -->
+        <article class="work-card" data-category="websites" data-project="paraarredwan">
+          <div class="work-card-media">
+            <span class="work-card-badge" style="background: rgba(16, 185, 129, 0.9); color: #fff; font-weight: 700;">E-Commerce • Live</span>
+            <img src="images/work/paraarredwan_hero.png" alt="Para Arredwan Healthcare E-Commerce Website" loading="lazy">
+          </div>
+          <div class="work-card-body">
+            <div class="work-meta-row">
+              <span class="work-client">Para Arredwan</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">E-Commerce Healthcare Platform & Digital Retail Architecture</h3>
+            <p class="work-desc">High-conversion digital storefront and catalog architecture engineered for seamless parapharmacy retail. Features intuitive category taxonomies, responsive promotional merchandising, and localized checkout flows.</p>
+            <div class="work-footer">
+              <div class="work-tags-list">
+                <span class="work-tag-pill">E-Commerce Website</span>
+                <span class="work-tag-pill">UI/UX Architecture</span>
+                <span class="work-tag-pill">Conversion Optimization</span>
+                <span class="work-tag-pill">Digital Retail</span>
+              </div>
+              <span class="work-view-action">
+                View Project & Live Site
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
         <!-- Project 1: Chapitre 1 -->
         <article class="work-card" data-category="editorial" data-project="chapitre1">
           <div class="work-card-media">
@@ -766,7 +795,7 @@
   }
 })();
 </script>
-<script src="site.js?v=55"></script>
+<script src="site.js?v=56"></script>
 <script src="cookie-banner.js?v=15"></script>
 </body>
 </html>

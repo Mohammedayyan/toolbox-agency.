@@ -333,6 +333,31 @@
 
   // ─── $100M AGENCY PORTFOLIO & WORK LIGHTBOX MODAL ───
   const workProjects = {
+    paraarredwan: {
+      title: "Para Arredwan — Healthcare E-Commerce & Retail Architecture",
+      subtitle: "Websites • E-Commerce Platform • Digital Retail Architecture",
+      client: "Para Arredwan",
+      year: "2026",
+      liveUrl: "https://www.paraarredwan.com/",
+      deliverables: "E-Commerce Web Architecture, Category Taxonomy, Responsive UI/UX, Checkout Flow, Inventory Integration",
+      desc: "Para Arredwan is an established parapharmacy and healthcare retail destination in Morocco. Toolbox Studio designed and architected a modern, high-converting digital storefront featuring intuitive category navigation, responsive product merchandizing cards, curated wellness guides, customer social proof, and streamlined localized checkout.",
+      images: [
+        "images/work/paraarredwan_hero.png",
+        "images/work/paraarredwan_full.png"
+      ]
+    },
+    oncilla: {
+      title: "Oncilla Space — Operating System & Digital Infrastructure",
+      subtitle: "Websites • Digital Product • Software Architecture",
+      client: "Oncilla Space",
+      year: "2026",
+      liveUrl: "https://www.oncilla.space/",
+      deliverables: "Product Landing Page, Operating System Interface, Design Tokens, Web Architecture",
+      desc: "Oncilla is an offline-first enterprise operating system designed for mission-critical digital sovereignty and autonomous workflows. We developed an authoritative, high-contrast dark-mode web platform and product interface.",
+      images: [
+        "images/work/logo_oncilla.png"
+      ]
+    },
     chapitre1: {
       title: "Chapitre 1 — Contemporary Editorial Art Direction",
       subtitle: "Editorial Design • Publication Grid • Print Direction",
@@ -463,8 +488,9 @@
         const filter = btn.getAttribute('data-filter');
 
         workCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
+          const category = card.getAttribute('data-category') || '';
+          const cats = category.split(/\s+/);
+          if (filter === 'all' || cats.includes(filter)) {
             card.style.display = 'flex';
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
