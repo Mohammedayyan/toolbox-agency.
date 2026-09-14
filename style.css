@@ -333,35 +333,359 @@ h3 {
   font-size: 1.05rem;
 }
 
-/* ─── HERO ─── */
+/* ─── HERO & CYBERNETIC MATRIX GRID ($100M LUXURY LAB) ─── */
+.hero-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, #111424 0%, #090A0F 80%);
+  border-bottom: 1px solid rgba(77, 97, 255, 0.12);
+}
+
+.hero-grid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+.hero-glow-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: 20%;
+  background: radial-gradient(circle, rgba(77, 97, 255, 0.25) 0%, rgba(157, 80, 255, 0.08) 60%, transparent 100%);
+}
+
+.hero-glow-orb-2 {
+  width: 450px;
+  height: 450px;
+  top: 15%;
+  right: 5%;
+  background: radial-gradient(circle, rgba(157, 80, 255, 0.22) 0%, rgba(77, 97, 255, 0.05) 70%, transparent 100%);
+}
+
 .hero {
-  padding: calc(var(--header-h) + 80px) 0 96px;
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--header-h) + 48px) 0 80px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
   align-items: center;
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .hero-content {
+    align-items: center;
+  }
+}
+
+/* Status Pill Badge */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(17, 20, 36, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(77, 97, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 12px rgba(77, 97, 255, 0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-status-pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--blue);
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  position: relative;
+}
+
+.status-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid #10B981;
+  animation: pulse-ring 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.pill-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pill-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: rgba(77, 97, 255, 0.25);
+  color: #B4C2FF;
+  border-radius: 20px;
+  border: 1px solid rgba(77, 97, 255, 0.35);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.hero-title .accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .lead {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  max-width: 560px;
+  margin-bottom: 32px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.hero-btn-main {
+  background: linear-gradient(135deg, #4D61FF 0%, #8B5CF6 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(77, 97, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(77, 97, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn-sub {
+  background: rgba(17, 20, 36, 0.7);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 24px;
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-sub:hover {
+  border-color: var(--blue);
+  color: #FFFFFF;
+  background: rgba(77, 97, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Micro Metrics Row */
+.hero-micro-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 560px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .hero-micro-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.micro-metric-item {
+  display: flex;
+  align-items: center;
   gap: 12px;
-  margin-top: 32px;
+  background: rgba(17, 20, 36, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+}
+
+.micro-metric-item:hover {
+  border-color: rgba(77, 97, 255, 0.35);
+  background: rgba(17, 20, 36, 0.85);
+  transform: translateY(-1px);
+}
+
+.metric-icon {
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(77, 97, 255, 0.15);
+  border: 1px solid rgba(77, 97, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A78BFA;
+  flex-shrink: 0;
+}
+
+.metric-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-text strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.metric-text span {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
+/* Right Visual Column with 3D Hologram & Floating Chips */
+.hero-visual-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .hero-robot-wrapper {
   perspective: 1200px;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   aspect-ratio: 1 / 1;
-  margin: 0 auto;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: robot-bob 6s ease-in-out infinite;
+}
+
+/* Floating Live Status Chips */
+.hero-float-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 15, 26, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(77, 97, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(77, 97, 255, 0.15);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.chip-top-right {
+  top: -15px;
+  right: -10px;
+  animation: chip-float-1 5s ease-in-out infinite;
+}
+
+.chip-bottom-left {
+  bottom: -15px;
+  left: -15px;
+  animation: chip-float-2 6s ease-in-out infinite;
+}
+
+@keyframes chip-float-1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+@keyframes chip-float-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-1.5deg); }
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+}
+
+.chip-spark {
+  color: #A78BFA;
+  font-size: 11px;
+}
+
+.strip-sep {
+  color: #8B5CF6;
+  font-size: 10px;
+  margin: 0 16px;
+  opacity: 0.8;
 }
 
 .robot-card {

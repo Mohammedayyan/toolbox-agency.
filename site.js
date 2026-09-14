@@ -84,6 +84,300 @@
     }, 100);
   }
 
+  // ─── INTERACTIVE CYBERNETIC MATRIX CANVAS (HERO GRID) ───
+  function initHeroCyberneticGrid() {
+    const canvas = document.getElementById('hero-grid-canvas');
+    const heroWrapper = document.getElementById('hero-wrapper');
+    if (!canvas || !heroWrapper) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let animationFrameId = null;
+    let isVisible = true;
+
+    // Mouse coordinates in canvas local space
+    let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, active: false };
+
+    // Floating particles & energy pulses traveling on grid lines
+    const pulses = [];
+    const maxPulses = 12;
+
+    const particles = [];
+    const numParticles = 24;
+
+    function resize() {
+      const rect = heroWrapper.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // Re-init particles
+      particles.length = 0;
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: -Math.random() * 0.45 - 0.1,
+          size: Math.random() * 1.8 + 0.8,
+          alpha: Math.random() * 0.6 + 0.2,
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    // Grid sizing
+    const cellSize = 54;
+
+    function spawnPulse() {
+      if (pulses.length >= maxPulses) return;
+      const isHorizontal = Math.random() > 0.5;
+      const cols = Math.floor(width / cellSize);
+      const rows = Math.floor(height / cellSize);
+
+      if (isHorizontal) {
+        const row = Math.floor(Math.random() * rows);
+        const y = row * cellSize;
+        const forward = Math.random() > 0.5;
+        pulses.push({
+          x: forward ? 0 : width,
+          y: y,
+          vx: (forward ? 1 : -1) * (Math.random() * 2 + 2.5),
+          vy: 0,
+          len: Math.random() * 40 + 30,
+          color: Math.random() > 0.4 ? 'rgba(77, 97, 255, ' : 'rgba(167, 139, 250, ',
+          maxDist: width,
+          traveled: 0
+        });
+      } else {
+        const col = Math.floor(Math.random() * cols);
+        const x = col * cellSize;
+        const downward = Math.random() > 0.5;
+        pulses.push({
+          x: x,
+          y: downward ? 0 : height,
+          vx: 0,
+          vy: (downward ? 1 : -1) * (Math.random() * 2 + 2.5),
+          len: Math.random() * 40 + 30,
+          color: Math.random() > 0.4 ? 'rgba(96, 165, 250, ' : 'rgba(192, 132, 252, ',
+          maxDist: height,
+          traveled: 0
+        });
+      }
+    }
+
+    let lastPulseTime = 0;
+
+    function render(time) {
+      if (!isVisible) return;
+
+      // Smooth mouse lerp
+      mouse.x += (mouse.targetX - mouse.x) * 0.12;
+      mouse.y += (mouse.targetY - mouse.y) * 0.12;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // 1. Draw Perspective Matrix Grid Lines
+      const cols = Math.ceil(width / cellSize) + 1;
+      const rows = Math.ceil(height / cellSize) + 1;
+
+      // Vertical lines
+      for (let c = 0; c < cols; c++) {
+        const x = c * cellSize;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+
+        const dx = Math.abs(x - mouse.x);
+        let alpha = 0.045;
+        if (mouse.active && dx < 200) {
+          alpha += (1 - dx / 200) * 0.18;
+        }
+
+        ctx.strokeStyle = `rgba(77, 97, 255, ${alpha})`;
+        ctx.lineWidth = dx < 80 && mouse.active ? 1.2 : 0.75;
+        ctx.stroke();
+      }
+
+      // Horizontal lines
+      for (let r = 0; r < rows; r++) {
+        const y = r * cellSize;
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+
+        const dy = Math.abs(y - mouse.y);
+        let alpha = 0.045;
+        if (mouse.active && dy < 200) {
+          alpha += (1 - dy / 200) * 0.18;
+        }
+
+        ctx.strokeStyle = `rgba(77, 97, 255, ${alpha})`;
+        ctx.lineWidth = dy < 80 && mouse.active ? 1.2 : 0.75;
+        ctx.stroke();
+      }
+
+      // 2. Draw Intersection Crosshairs (+) and Dots at Grid Nodes
+      const crossSize = 3;
+      for (let c = 0; c < cols; c++) {
+        const x = c * cellSize;
+        for (let r = 0; r < rows; r++) {
+          const y = r * cellSize;
+          const dist = Math.hypot(x - mouse.x, y - mouse.y);
+
+          if (mouse.active && dist < 220) {
+            const factor = 1 - dist / 220;
+            const glowAlpha = factor * 0.8;
+
+            ctx.beginPath();
+            ctx.moveTo(x - crossSize - factor * 2, y);
+            ctx.lineTo(x + crossSize + factor * 2, y);
+            ctx.moveTo(x, y - crossSize - factor * 2);
+            ctx.lineTo(x, y + crossSize + factor * 2);
+            ctx.strokeStyle = `rgba(167, 139, 250, ${glowAlpha})`;
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(x, y, 1.5 + factor, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${glowAlpha * 0.9})`;
+            ctx.fill();
+          } else if ((c + r) % 3 === 0) {
+            ctx.beginPath();
+            ctx.arc(x, y, 1, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(77, 97, 255, 0.12)';
+            ctx.fill();
+          }
+        }
+      }
+
+      // 3. Draw Interactive Cursor Spotlight Glow
+      if (mouse.active && mouse.x > 0 && mouse.y > 0) {
+        const radGlow = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
+        radGlow.addColorStop(0, 'rgba(77, 97, 255, 0.14)');
+        radGlow.addColorStop(0.5, 'rgba(157, 80, 255, 0.05)');
+        radGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = radGlow;
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // 4. Update & Draw Energy Pulses traveling on grid lines
+      if (time - lastPulseTime > 700) {
+        spawnPulse();
+        lastPulseTime = time;
+      }
+
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        const p = pulses[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.traveled += Math.abs(p.vx || p.vy);
+
+        const fade = Math.sin((p.traveled / p.maxDist) * Math.PI);
+        const pulseAlpha = Math.max(0, Math.min(1, fade * 0.85));
+
+        ctx.beginPath();
+        if (p.vx !== 0) {
+          ctx.moveTo(p.x - p.len * Math.sign(p.vx), p.y);
+          ctx.lineTo(p.x, p.y);
+        } else {
+          ctx.moveTo(p.x, p.y - p.len * Math.sign(p.vy));
+          ctx.lineTo(p.x, p.y);
+        }
+        ctx.strokeStyle = p.color + pulseAlpha + ')';
+        ctx.lineWidth = 1.8;
+        ctx.shadowColor = p.color + '0.8)';
+        ctx.shadowBlur = 6;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fill();
+
+        if (p.traveled >= p.maxDist || p.x < -50 || p.x > width + 50 || p.y < -50 || p.y > height + 50) {
+          pulses.splice(i, 1);
+        }
+      }
+
+      // 5. Update & Draw Floating Micro Particles
+      for (let i = 0; i < particles.length; i++) {
+        const pt = particles[i];
+        pt.x += pt.vx;
+        pt.y += pt.vy;
+        pt.pulse += 0.02;
+
+        if (pt.y < -10) { pt.y = height + 10; pt.x = Math.random() * width; }
+        if (pt.x < -10) pt.x = width + 10;
+        if (pt.x > width + 10) pt.x = -10;
+
+        const currentAlpha = pt.alpha * (0.6 + 0.4 * Math.sin(pt.pulse));
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, pt.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(167, 139, 250, ${currentAlpha})`;
+        ctx.fill();
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    }
+
+    heroWrapper.addEventListener('mousemove', (e) => {
+      const rect = heroWrapper.getBoundingClientRect();
+      mouse.targetX = e.clientX - rect.left;
+      mouse.targetY = e.clientY - rect.top;
+      mouse.active = true;
+    });
+
+    heroWrapper.addEventListener('mouseleave', () => {
+      mouse.active = false;
+      mouse.targetX = -1000;
+      mouse.targetY = -1000;
+    });
+
+    heroWrapper.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        const rect = heroWrapper.getBoundingClientRect();
+        mouse.targetX = e.touches[0].clientX - rect.left;
+        mouse.targetY = e.touches[0].clientY - rect.top;
+        mouse.active = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) {
+          animationFrameId = requestAnimationFrame(render);
+        } else if (!isVisible && animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      });
+    }, { threshold: 0.05 });
+
+    observer.observe(heroWrapper);
+    animationFrameId = requestAnimationFrame(render);
+  }
+
+  // Initialize Cybernetic Hero Grid
+  initHeroCyberneticGrid();
+
   // ─── 3D LOGO ROBOT INTERACTION ───
   const robotCard = document.getElementById('robot-card');
   const robotWrapper = document.querySelector('.hero-robot-wrapper');
