@@ -333,23 +333,284 @@ h3 {
   font-size: 1.05rem;
 }
 
-/* ─── HERO ─── */
+/* ─── HERO & CYBERNETIC MATRIX GRID (DESIGN SYSTEM UNIFIED) ─── */
+.hero-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-grid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+.hero-glow-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -80px;
+  left: 15%;
+  background: radial-gradient(circle, rgba(77, 97, 255, 0.18) 0%, rgba(157, 80, 255, 0.05) 60%, transparent 100%);
+}
+
+.hero-glow-orb-2 {
+  width: 450px;
+  height: 450px;
+  top: 20%;
+  right: 5%;
+  background: radial-gradient(circle, rgba(157, 80, 255, 0.16) 0%, rgba(77, 97, 255, 0.04) 70%, transparent 100%);
+}
+
 .hero {
-  padding: calc(var(--header-h) + 80px) 0 96px;
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--header-h) + 40px) 0 72px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
   align-items: center;
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .hero-content {
+    align-items: center;
+  }
+}
+
+/* Liquid Glass Status Pill Badge */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-status-pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--blue);
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  position: relative;
+}
+
+.status-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid #10B981;
+  animation: pulse-ring 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.pill-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.pill-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: rgba(77, 97, 255, 0.1);
+  color: var(--blue);
+  border-radius: 20px;
+  border: 1px solid rgba(77, 97, 255, 0.2);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.hero-title .accent {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .lead {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 560px;
+  margin-bottom: 32px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.hero-btn-main {
+  background: var(--gradient);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(77, 97, 255, 0.25);
+  border: 1px solid transparent;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(77, 97, 255, 0.4);
+}
+
+.hero-btn-sub {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 14px 24px;
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-sub:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+
+/* Micro Metrics Row (Liquid Glass) */
+.hero-micro-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 560px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .hero-micro-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.micro-metric-item {
+  display: flex;
+  align-items: center;
   gap: 12px;
-  margin-top: 32px;
+  background: var(--bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.micro-metric-item:hover {
+  border-color: rgba(77, 97, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.metric-icon {
+  font-size: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(77, 97, 255, 0.08);
+  border: 1px solid rgba(77, 97, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.metric-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-text strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.metric-text span {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
+/* Right Visual Column with Liquid Glass Floating Chips */
+.hero-visual-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .hero-robot-wrapper {
@@ -357,11 +618,73 @@ h3 {
   width: 100%;
   max-width: 400px;
   aspect-ratio: 1 / 1;
-  margin: 0 auto;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: robot-bob 6s ease-in-out infinite;
+}
+
+/* Liquid Glass Floating Chips */
+.hero-float-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.chip-top-right {
+  top: -12px;
+  right: -10px;
+  animation: chip-float-1 5s ease-in-out infinite;
+}
+
+.chip-bottom-left {
+  bottom: -12px;
+  left: -15px;
+  animation: chip-float-2 6s ease-in-out infinite;
+}
+
+@keyframes chip-float-1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+@keyframes chip-float-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-1.5deg); }
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.chip-spark {
+  color: var(--purple);
+  font-size: 11px;
+}
+
+.strip-sep {
+  color: var(--blue);
+  font-size: 10px;
+  margin: 0 16px;
+  opacity: 0.7;
 }
 
 .robot-card {
@@ -391,40 +714,19 @@ h3 {
 .robot-bg-inner {
   width: 100%;
   height: 100%;
-  background: var(--card-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: transparent;
   border-radius: 80px;
-  /* matches logo's rx=100 relative to 500x500 box */
-  border: 1px solid var(--card-border);
-  box-shadow: 0 30px 60px rgba(77, 97, 255, 0.06),
-    0 0 40px rgba(157, 80, 255, 0.04),
-    inset 0 0 25px var(--card-inset);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-/* Subtle cybernetic grid texture inside the logo card for a premium feel */
-.robot-bg-inner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(77, 97, 255, 0.08) 1.5px, transparent 1.5px),
-    linear-gradient(rgba(77, 97, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(77, 97, 255, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px, 24px 24px, 24px 24px;
-  background-position: center;
-  opacity: 0.8;
-}
-
-/* Ambient glow spotlight behind the robot face */
+/* Subtle ambient aura behind the robot face */
 .robot-bg-inner::after {
   content: '';
   position: absolute;
-  inset: 15%;
-  background: radial-gradient(circle, rgba(77, 97, 255, 0.18) 0%, rgba(157, 80, 255, 0.06) 65%, transparent 100%);
-  filter: blur(15px);
+  inset: 10%;
+  background: radial-gradient(circle, rgba(77, 97, 255, 0.15) 0%, rgba(157, 80, 255, 0.05) 50%, transparent 80%);
+  filter: blur(25px);
   pointer-events: none;
 }
 
