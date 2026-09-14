@@ -409,6 +409,44 @@
       images: [
         "images/work/googlefocus_mockup.jpg"
       ]
+    },
+    softtouch: {
+      title: "Soft Touch Skincare — Luxury Cosmetic Identity & Packaging",
+      subtitle: "Brand Identity • Packaging Architecture • Art Direction",
+      client: "Soft Touch Paris",
+      year: "2025",
+      deliverables: "Bespoke Logomark, Luxury Packaging System, Minimalist Brand Standards, Social Art Direction",
+      desc: "An ultra-refined visual identity designed for Soft Touch Skincare. Built with gentle, organic visual tones, modern typography, tactile packaging mockups, and calm luxury art direction.",
+      images: [
+        "images/work/pic2_visual.jpg",
+        "images/work/googlefocus_mockup.jpg",
+        "images/work/logo_softtouch.png"
+      ]
+    },
+    deutsch: {
+      title: "Deutsch Brandmark — Modern Wordmark & Visual System",
+      subtitle: "Logomark System • Typography Architecture • Brand Guidelines",
+      client: "Deutsch Corp",
+      year: "2025",
+      deliverables: "Geometric Wordmark, Typography Hierarchy, Corporate Color Palettes, Brand Collateral",
+      desc: "A precision-engineered wordmark crafted with architectural geometry, heavy horizontal emphasis, and balanced kerning. Built to project authoritative confidence across corporate environments and digital touchpoints.",
+      images: [
+        "images/work/logo_deutsch.png",
+        "images/work/logo_showcase_main.jpg"
+      ]
+    },
+    signature: {
+      title: "Signature Logomarks & Identity Archive",
+      subtitle: "Identity Archive • Monogram Systems • Brandmarks",
+      client: "Toolbox Studio Archive",
+      year: "2025–2026",
+      deliverables: "Custom Logomarks, Monograms, Camera Mark Identity, Geometric Crests",
+      desc: "A curated collection of bespoke logomarks, vector emblems, and monogram marks designed for various private clients across fashion, photography, technology, and luxury services.",
+      images: [
+        "images/work/logo_showcase_2.png",
+        "images/work/logo_showcase_main.jpg",
+        "images/work/logo_showcase_3.png"
+      ]
     }
   };
 
@@ -502,10 +540,14 @@
     }
   }
 
-  workCards.forEach(card => {
-    card.addEventListener('click', (e) => {
+  document.querySelectorAll('[data-project]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      // If it has an external live href (like Oncilla / Para Arredwan), allow external navigation
+      if (trigger.tagName === 'A' && trigger.getAttribute('href') && trigger.getAttribute('href').startsWith('http')) {
+        return;
+      }
       e.preventDefault();
-      const projectId = card.getAttribute('data-project');
+      const projectId = trigger.getAttribute('data-project');
       if (projectId) {
         openProjectModal(projectId);
       }
