@@ -588,5 +588,41 @@
       document.body.style.overflow = '';
     });
   }
+
+  // ─── INTERACTIVE CONTACT FORM HANDLER ───
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name')?.value.trim() || '';
+      const email = document.getElementById('contact-email')?.value.trim() || '';
+      const service = document.getElementById('contact-service')?.value || 'General Project Inquiry';
+      const message = document.getElementById('contact-message')?.value.trim() || '';
+
+      const subject = encodeURIComponent(`Project Inquiry: ${service} — ${name}`);
+      const body = encodeURIComponent(
+        `Hello Mohammed,\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Selected Discipline: ${service}\n\n` +
+        `Project Overview & Goals:\n${message}\n\n` +
+        `---\n` +
+        `Sent via Toolbox Studio (https://toolboxstudio.me)`
+      );
+
+      const mailtoUrl = `mailto:contact@toolboxstudio.me?subject=${subject}&body=${body}`;
+
+      if (formStatus) {
+        formStatus.style.display = 'block';
+        formStatus.innerHTML = `✓ Opening your email client to send message to <strong>contact@toolboxstudio.me</strong>...`;
+      }
+
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 300);
+    });
+  }
 })();
 
