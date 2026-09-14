@@ -342,7 +342,6 @@
       deliverables: "E-Commerce Web Architecture, Category Taxonomy, Responsive UI/UX, Checkout Flow, Inventory Integration",
       desc: "Para Arredwan is an established parapharmacy and healthcare retail destination in Morocco. Toolbox Studio designed and architected a modern, high-converting digital storefront featuring intuitive category navigation, responsive product merchandizing cards, curated wellness guides, customer social proof, and streamlined localized checkout.",
       images: [
-        "images/work/paraarredwan_hero.png",
         "images/work/paraarredwan_full.png"
       ]
     },
