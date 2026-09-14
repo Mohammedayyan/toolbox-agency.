@@ -2421,7 +2421,7 @@ h3 {
 
 .logos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-top: 40px;
 }
@@ -2438,6 +2438,9 @@ h3 {
   justify-content: center;
   min-height: 200px;
   text-align: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
