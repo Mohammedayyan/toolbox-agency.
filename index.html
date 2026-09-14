@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=125">
+  <link rel="stylesheet" href="style.css?v=200">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNY9C2360J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -66,129 +66,66 @@
 </header>
 
 <main>
-  <div class="hero-wrapper" id="hero-wrapper">
-    <!-- Interactive Cybernetic Canvas Grid -->
-    <canvas id="hero-grid-canvas" class="hero-grid-canvas" aria-hidden="true"></canvas>
-    <div class="hero-glow-orb hero-glow-orb-1" aria-hidden="true"></div>
-    <div class="hero-glow-orb hero-glow-orb-2" aria-hidden="true"></div>
-
-    <section class="section hero" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-status-pill">
-            <span class="status-pulse-dot"></span>
-            <span class="pill-text">Digital Systems & Brand Lab • Kenitra, Morocco</span>
-            <span class="pill-badge">2026/27</span>
-          </div>
-
-          <h1 class="hero-title">
-            We architect digital products & brand systems that <span class="accent">actually scale.</span>
-          </h1>
-
-          <p class="lead">
-            From high-impact visual identity and editorial publications to custom web architectures and operational workflows for high-growth businesses.
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://toolboxstudio.zohobookings.com/Session" class="btn btn-primary hero-btn-main" target="_blank" rel="noopener">
-              <span>Book a Strategy Call</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#work" class="btn btn-secondary hero-btn-sub">
-              <span>Explore Selected Work</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 9l-7 7-7-7"/></svg>
-            </a>
-          </div>
-
-          <!-- Micro Metrics -->
-          <div class="hero-micro-metrics">
-            <div class="micro-metric-item">
-              <span class="metric-icon">⚡</span>
-              <div class="metric-text">
-                <strong>100% Bespoke</strong>
-                <span>Code & Systems</span>
-              </div>
-            </div>
-            <div class="micro-metric-item">
-              <span class="metric-icon">★</span>
-              <div class="metric-text">
-                <strong>5.0 Client Rating</strong>
-                <span>Google Verified</span>
-              </div>
-            </div>
-            <div class="micro-metric-item">
-              <span class="metric-icon">📐</span>
-              <div class="metric-text">
-                <strong>5 Disciplines</strong>
-                <span>Brand & Digital</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual-col">
-          <div class="hero-robot-wrapper">
-            <!-- Floating Live Status Chips -->
-            <div class="hero-float-chip chip-top-right">
-              <span class="chip-dot"></span>
-              <span>Systems & UX Lab</span>
-            </div>
-            <div class="hero-float-chip chip-bottom-left">
-              <span class="chip-spark">✦</span>
-              <span>Autonomous Workflows</span>
-            </div>
-
-            <div class="robot-card" id="robot-card">
-              <!-- Background layer: Dark rounded card base -->
-              <div class="robot-layer robot-layer-bg">
-                <div class="robot-bg-inner"></div>
-              </div>
-              
-              <!-- Middle layer: Face outline (matching favicon.svg outline rectangle) -->
-              <div class="robot-layer robot-layer-outline">
-                <svg class="robot-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="fg-outline" x1="130" y1="130" x2="370" y2="370" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#4D61FF"/>
-                      <stop offset="1" stop-color="#9D50FF"/>
-                    </linearGradient>
-                  </defs>
-                  <rect x="130" y="130" width="240" height="240" rx="66" stroke="url(#fg-outline)" stroke-width="21"/>
-                </svg>
-              </div>
-              
-              <!-- Front layer: Eyes and mouth (matching favicon.svg elements) -->
-              <div class="robot-layer robot-layer-face">
-                <svg class="robot-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="fg-elements" x1="130" y1="130" x2="370" y2="370" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#4D61FF"/>
-                      <stop offset="1" stop-color="#9D50FF"/>
-                    </linearGradient>
-                  </defs>
-                  <g id="robot-eyes">
-                    <circle class="robot-eye" cx="200" cy="208" r="21" fill="url(#fg-elements)"/>
-                    <circle class="robot-eye" cx="250" cy="208" r="21" fill="url(#fg-elements)"/>
-                    <circle class="robot-eye" cx="300" cy="208" r="21" fill="url(#fg-elements)"/>
-                  </g>
-                  <path id="robot-mouth" d="M 229,292 A 21,21 0 1,1 271,292 A 21,21 0 1,1 229,292 Z" fill="url(#fg-elements)"/>
-                </svg>
-              </div>
-              
-              <!-- Ambient overlay shine for realistic glass reflection -->
-              <div class="robot-shine"></div>
-            </div>
-          </div>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Creative Agency • Kenitra, Morocco</p>
+        <h1>We design brands and systems that <span class="accent">actually</span> scale.</h1>
+        <p class="lead">From high-impact brand identities and editorial publications to custom business workflows and sleek digital interfaces for growing brands.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">Explore Selected Work</a>
+          <a href="https://toolboxstudio.zohobookings.com/Session" class="btn btn-secondary" target="_blank" rel="noopener">Book a free call</a>
         </div>
       </div>
-    </section>
-
-    <!-- Upgraded Architectural Marquee Ticker -->
-    <div class="strip" aria-hidden="true">
-      <div class="strip-track">
-        <span>Brand Identity Systems</span><span class="strip-sep">✦</span><span>UX/UI Architecture</span><span class="strip-sep">✦</span><span>Digital Platforms</span><span class="strip-sep">✦</span><span>Business Systems & Workflows</span><span class="strip-sep">✦</span><span>Product Audits</span><span class="strip-sep">✦</span><span>Mobile Applications</span><span class="strip-sep">✦</span>
-        <span>Brand Identity Systems</span><span class="strip-sep">✦</span><span>UX/UI Architecture</span><span class="strip-sep">✦</span><span>Digital Platforms</span><span class="strip-sep">✦</span><span>Business Systems & Workflows</span><span class="strip-sep">✦</span><span>Product Audits</span><span class="strip-sep">✦</span><span>Mobile Applications</span><span class="strip-sep">✦</span>
+      <div class="hero-robot-wrapper">
+        <div class="robot-card" id="robot-card">
+          <!-- Background layer: Dark rounded card base -->
+          <div class="robot-layer robot-layer-bg">
+            <div class="robot-bg-inner"></div>
+          </div>
+          
+          <!-- Middle layer: Face outline (matching favicon.svg outline rectangle) -->
+          <div class="robot-layer robot-layer-outline">
+            <svg class="robot-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="fg-outline" x1="130" y1="130" x2="370" y2="370" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4D61FF"/>
+                  <stop offset="1" stop-color="#9D50FF"/>
+                </linearGradient>
+              </defs>
+              <rect x="130" y="130" width="240" height="240" rx="66" stroke="url(#fg-outline)" stroke-width="21"/>
+            </svg>
+          </div>
+          
+          <!-- Front layer: Eyes and mouth (matching favicon.svg elements) -->
+          <div class="robot-layer robot-layer-face">
+            <svg class="robot-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="fg-elements" x1="130" y1="130" x2="370" y2="370" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4D61FF"/>
+                  <stop offset="1" stop-color="#9D50FF"/>
+                </linearGradient>
+              </defs>
+              <g id="robot-eyes">
+                <circle class="robot-eye" cx="200" cy="208" r="21" fill="url(#fg-elements)"/>
+                <circle class="robot-eye" cx="250" cy="208" r="21" fill="url(#fg-elements)"/>
+                <circle class="robot-eye" cx="300" cy="208" r="21" fill="url(#fg-elements)"/>
+              </g>
+              <path id="robot-mouth" d="M 229,292 A 21,21 0 1,1 271,292 A 21,21 0 1,1 229,292 Z" fill="url(#fg-elements)"/>
+            </svg>
+          </div>
+          
+          <!-- Ambient overlay shine for realistic glass reflection -->
+          <div class="robot-shine"></div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Business Systems</span><span>UX Design</span><span>Digital Strategy</span><span>UX Audit</span><span>Operations</span><span>Mobile Apps</span>
+      <span>Business Systems</span><span>UX Design</span><span>Digital Strategy</span><span>UX Audit</span><span>Operations</span><span>Mobile Apps</span>
     </div>
   </div>
 
@@ -858,7 +795,7 @@
   }
 })();
 </script>
-<script src="site.js?v=125"></script>
+<script src="site.js?v=200"></script>
 <script src="cookie-banner.js?v=15"></script>
 </body>
 </html>
