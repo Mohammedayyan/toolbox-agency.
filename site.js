@@ -269,4 +269,206 @@
       }
     });
   }
+
+  // ─── $100M AGENCY PORTFOLIO & WORK LIGHTBOX MODAL ───
+  const workProjects = {
+    chapitre1: {
+      title: "Chapitre 1 — Contemporary Editorial Art Direction",
+      subtitle: "Editorial Design • Publication Grid • Print Direction",
+      client: "Chapitre 1 Magazine",
+      year: "2026",
+      deliverables: "Editorial Layout Architecture, Typographic Hierarchy, Cover Conception, Print Specifications",
+      desc: "Chapitre 1 is an independent print publication exploring contemporary culture, architecture, and visual aesthetics. Toolbox Studio created a disciplined yet dynamic editorial grid system, balancing brutalist display serif typography with expansive negative space, high-contrast imagery pacing, and print-ready production specifications.",
+      images: [
+        "images/work/chapitre1_mockup.jpg",
+        "images/work/chapitre1_pages_p1.jpg",
+        "images/work/chapitre1_pages_p2.jpg",
+        "images/work/chapitre1_pages_p3.jpg"
+      ]
+    },
+    mk: {
+      title: "MK Studio — Visual Identity & Merchandise Architecture",
+      subtitle: "Brand Identity • Stationery • Packaging Collateral",
+      client: "MK Studio",
+      year: "2026",
+      deliverables: "Geometric Monogram Mark, Brand Color Architecture, Vinyl Stickers, Letterheads, Packaging",
+      desc: "A bold, minimalist visual identity system developed for MK Studio. Designed around an architectural monogram mark with pure geometry, the identity expands seamlessly across tactile merchandise, holographic and die-cut vinyl stickers, executive stationery, and digital presence.",
+      images: [
+        "images/work/mk_branding.jpg",
+        "images/work/mk_stickers.jpg",
+        "images/work/mh_charte_p1.jpg"
+      ]
+    },
+    magictouch: {
+      title: "Magic Touch — Automotive Luxury & Corporate Identity",
+      subtitle: "Brand Guidelines • Luxury Detailing • Vehicle Livery",
+      client: "Magic Touch Studio",
+      year: "2025",
+      deliverables: "Complete Brand Standards Manual, Color Architecture, Vehicle Livery Guidelines, Signage",
+      desc: "Magic Touch delivers ultra-premium ceramic coating and automotive preservation for luxury sports cars. We established an authoritative, high-prestige brand identity manual featuring dark-mode color hierarchies, vehicle wrap/livery standards, luminous signage blueprints, and client warranty certification kits.",
+      images: [
+        "images/work/magictouch_p1.jpg",
+        "images/work/magictouch_p2.jpg",
+        "images/work/magictouch_p3.jpg",
+        "images/work/magictouch_p4.jpg"
+      ]
+    },
+    purrfect: {
+      title: "Purrfect — Modern Pet Lifestyle Brand Guidelines",
+      subtitle: "Brand Manual • Design Tokens • Packaging Architecture",
+      client: "Purrfect Lifestyle",
+      year: "2025",
+      deliverables: "Brand Identity Manual, Packaging Scales, Typography Tokens, Digital Standards",
+      desc: "Purrfect is a design-forward pet lifestyle brand combining playful warmth with clean modernism. The comprehensive brand guidelines define dual-tone color hierarchies, responsive typographic scales, packaging box structures, and digital design tokens engineered for swift international retail expansion.",
+      images: [
+        "images/work/purrfect_p1.jpg",
+        "images/work/purrfect_p2.jpg",
+        "images/work/purrfect_p3.jpg",
+        "images/work/purrfect_p4.jpg"
+      ]
+    },
+    idokanino: {
+      title: "Idokanino — Organic Heritage Visual Identity",
+      subtitle: "Brand Identity • Heritage Branding • Artisanal Packaging",
+      client: "Idokanino",
+      year: "2025",
+      deliverables: "Visual Identity Manual, Earthy Palette Formulation, Organic Packaging Guidelines",
+      desc: "An earthy, artisanal brand identity rooted in rich cultural heritage. The identity pairs organic, warm earth tones with refined minimalist typography, sustainable packaging concepts, and authentic brand storytelling guidelines tailored for premium conscious consumers.",
+      images: [
+        "images/work/idokanino_p1.jpg"
+      ]
+    },
+    googlefocus: {
+      title: "Google Focus Series — Exhibition Print & Campaign Design",
+      subtitle: "Print Direction • Poster Series • Visual Campaign",
+      client: "Focus Series Exhibition",
+      year: "2025",
+      deliverables: "Exhibition Poster Series, Print Direction, High-Contrast Typographic Art Direction",
+      desc: "A bold conceptual print campaign exploring spatial tension, extreme scale shifts, and high-contrast typography. Created for exhibition collateral and poster display, the series illustrates clarity and focus in an era of information overload.",
+      images: [
+        "images/work/googlefocus_mockup.jpg"
+      ]
+    }
+  };
+
+  // Filter Buttons Handler
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const workCards = document.querySelectorAll('.work-card');
+
+  if (filterBtns.length > 0 && workCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        workCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Project Modal Dialog
+  const projectModal = document.getElementById('project-modal');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalTitle = document.getElementById('modal-project-title');
+  const modalSubtitle = document.getElementById('modal-project-subtitle');
+  const modalGallery = document.getElementById('modal-project-gallery');
+  const modalDesc = document.getElementById('modal-project-desc');
+  const modalClient = document.getElementById('modal-project-client');
+  const modalYear = document.getElementById('modal-project-year');
+  const modalDeliverables = document.getElementById('modal-project-deliverables');
+  const modalWA = document.getElementById('modal-project-wa');
+  const modalLive = document.getElementById('modal-project-live');
+
+  function openProjectModal(projectId) {
+    const data = workProjects[projectId];
+    if (!data || !projectModal) return;
+
+    modalTitle.textContent = data.title;
+    modalSubtitle.textContent = data.subtitle;
+    modalClient.textContent = data.client;
+    modalYear.textContent = data.year;
+    modalDeliverables.textContent = data.deliverables;
+    modalDesc.textContent = data.desc;
+
+    // Handle Live URL button
+    if (modalLive) {
+      if (data.liveUrl) {
+        modalLive.href = data.liveUrl;
+        modalLive.style.display = 'inline-flex';
+      } else {
+        modalLive.style.display = 'none';
+      }
+    }
+
+    // Set prefilled WhatsApp inquiry
+    const waText = encodeURIComponent(`Hello Mohammed, I explored your ${data.title} project on Toolbox Studio and would like to discuss a similar project.`);
+    modalWA.href = `https://wa.me/212776332317?text=${waText}`;
+
+    // Populate images
+    modalGallery.innerHTML = '';
+    data.images.forEach((imgSrc, idx) => {
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'modal-gallery-img';
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = `${data.title} - Visual ${idx + 1}`;
+      img.loading = idx === 0 ? 'eager' : 'lazy';
+      imgWrap.appendChild(img);
+      modalGallery.appendChild(imgWrap);
+    });
+
+    if (typeof projectModal.showModal === 'function') {
+      projectModal.showModal();
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeProjectModal() {
+    if (projectModal && projectModal.open) {
+      projectModal.close();
+      document.body.style.overflow = '';
+    }
+  }
+
+  workCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectId = card.getAttribute('data-project');
+      if (projectId) {
+        openProjectModal(projectId);
+      }
+    });
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeProjectModal);
+  }
+
+  if (projectModal) {
+    // Light dismiss: click outside the modal-inner closes it
+    projectModal.addEventListener('click', (e) => {
+      const rect = projectModal.getBoundingClientRect();
+      const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+      if (!isInDialog || e.target === projectModal) {
+        closeProjectModal();
+      }
+    });
+
+    projectModal.addEventListener('close', () => {
+      document.body.style.overflow = '';
+    });
+  }
 })();
+
