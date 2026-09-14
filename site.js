@@ -23,7 +23,23 @@
     });
   }
 
-  // ─── SMOOTH SCROLL & CLEAN URL (NO UGLY # HASHES IN ADDRESS BAR) ───
+  // ─── SMOOTH SCROLL & CLEAN URL (NO INDEX.HTML OR UGLY # HASHES) ───
+  function getCleanPath() {
+    let path = window.location.pathname.replace(/\/index\.html$/, '');
+    return path === '' ? '/' : path;
+  }
+
+  function cleanBrowserUrl() {
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, null, getCleanPath());
+    }
+  }
+
+  // Immediately strip /index.html from URL bar on load if present
+  if (window.location.pathname.endsWith('/index.html') || window.location.pathname === '/index.html') {
+    cleanBrowserUrl();
+  }
+
   function cleanScrollTo(targetId) {
     const targetEl = document.getElementById(targetId);
     if (targetEl) {
@@ -36,10 +52,7 @@
         behavior: 'smooth'
       });
 
-      // Keep address bar clean without adding #section
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.pathname);
-      }
+      cleanBrowserUrl();
     }
   }
 
@@ -63,7 +76,7 @@
     }
   });
 
-  // If page loads with a hash (e.g. index.html#services), smooth scroll and clean URL
+  // If page loads with a hash (e.g. #services), smooth scroll and clean URL
   if (window.location.hash) {
     const initialHash = window.location.hash.substring(1);
     setTimeout(() => {
