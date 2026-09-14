@@ -527,22 +527,37 @@
       modalGallery.appendChild(imgWrap);
     });
 
-    if (typeof projectModal.showModal === 'function') {
-      projectModal.showModal();
-      document.body.style.overflow = 'hidden';
+    try {
+      if (typeof projectModal.showModal === 'function') {
+        if (!projectModal.open) projectModal.showModal();
+      } else {
+        projectModal.setAttribute('open', '');
+      }
+    } catch (err) {
+      projectModal.setAttribute('open', '');
     }
+    document.body.style.overflow = 'hidden';
   }
 
   function closeProjectModal() {
-    if (projectModal && projectModal.open) {
-      projectModal.close();
+    if (projectModal) {
+      try {
+        if (typeof projectModal.close === 'function') {
+          projectModal.close();
+        } else {
+          projectModal.removeAttribute('open');
+        }
+      } catch (err) {
+        projectModal.removeAttribute('open');
+      }
       document.body.style.overflow = '';
     }
   }
 
-  document.querySelectorAll('[data-project]').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      // If it has an external live href (like Oncilla / Para Arredwan), allow external navigation
+  // Global delegation for all project modal triggers (work cards and logomarks)
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-project]');
+    if (trigger) {
       if (trigger.tagName === 'A' && trigger.getAttribute('href') && trigger.getAttribute('href').startsWith('http')) {
         return;
       }
@@ -551,7 +566,7 @@
       if (projectId) {
         openProjectModal(projectId);
       }
-    });
+    }
   });
 
   if (modalCloseBtn) {
