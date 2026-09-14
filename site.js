@@ -23,6 +23,54 @@
     });
   }
 
+  // ─── SMOOTH SCROLL & CLEAN URL (NO UGLY # HASHES IN ADDRESS BAR) ───
+  function cleanScrollTo(targetId) {
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      const headerOffset = 85;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Keep address bar clean without adding #section
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.pathname);
+      }
+    }
+  }
+
+  // Intercept anchor clicks on the page for smooth scroll & clean URL
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+      const href = anchor.getAttribute('href');
+      if (href && href.length > 1) {
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          cleanScrollTo(targetId);
+          if (nav && nav.classList.contains('menu-open')) {
+            nav.classList.remove('menu-open');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      }
+    }
+  });
+
+  // If page loads with a hash (e.g. index.html#services), smooth scroll and clean URL
+  if (window.location.hash) {
+    const initialHash = window.location.hash.substring(1);
+    setTimeout(() => {
+      cleanScrollTo(initialHash);
+    }, 100);
+  }
+
   // ─── 3D LOGO ROBOT INTERACTION ───
   const robotCard = document.getElementById('robot-card');
   const robotWrapper = document.querySelector('.hero-robot-wrapper');
