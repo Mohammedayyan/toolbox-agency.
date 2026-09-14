@@ -333,12 +333,13 @@ h3 {
   font-size: 1.05rem;
 }
 
-/* ─── HERO & CYBERNETIC MATRIX GRID ($100M LUXURY LAB) ─── */
+/* ─── HERO & CYBERNETIC MATRIX GRID (DESIGN SYSTEM UNIFIED) ─── */
 .hero-wrapper {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 20%, #111424 0%, #090A0F 80%);
-  border-bottom: 1px solid rgba(77, 97, 255, 0.12);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .hero-grid-canvas {
@@ -354,32 +355,32 @@ h3 {
 .hero-glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 .hero-glow-orb-1 {
   width: 500px;
   height: 500px;
-  top: -100px;
-  left: 20%;
-  background: radial-gradient(circle, rgba(77, 97, 255, 0.25) 0%, rgba(157, 80, 255, 0.08) 60%, transparent 100%);
+  top: -80px;
+  left: 15%;
+  background: radial-gradient(circle, rgba(77, 97, 255, 0.18) 0%, rgba(157, 80, 255, 0.05) 60%, transparent 100%);
 }
 
 .hero-glow-orb-2 {
   width: 450px;
   height: 450px;
-  top: 15%;
+  top: 20%;
   right: 5%;
-  background: radial-gradient(circle, rgba(157, 80, 255, 0.22) 0%, rgba(77, 97, 255, 0.05) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(157, 80, 255, 0.16) 0%, rgba(77, 97, 255, 0.04) 70%, transparent 100%);
 }
 
 .hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-h) + 48px) 0 80px;
+  padding: calc(var(--header-h) + 40px) 0 72px;
 }
 
 .hero-grid {
@@ -409,19 +410,19 @@ h3 {
   }
 }
 
-/* Status Pill Badge */
+/* Liquid Glass Status Pill Badge */
 .hero-status-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(17, 20, 36, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(77, 97, 255, 0.3);
+  background: var(--bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   padding: 6px 14px;
   border-radius: 50px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 12px rgba(77, 97, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
@@ -435,7 +436,7 @@ h3 {
   height: 8px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
   position: relative;
 }
 
@@ -458,17 +459,17 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
 }
 
 .pill-badge {
   font-size: 11px;
   font-weight: 700;
   padding: 2px 8px;
-  background: rgba(77, 97, 255, 0.25);
-  color: #B4C2FF;
+  background: rgba(77, 97, 255, 0.1);
+  color: var(--blue);
   border-radius: 20px;
-  border: 1px solid rgba(77, 97, 255, 0.35);
+  border: 1px solid rgba(77, 97, 255, 0.2);
 }
 
 .hero-title {
@@ -477,11 +478,11 @@ h3 {
   letter-spacing: -0.035em;
   line-height: 1.12;
   margin-bottom: 20px;
-  color: #FFFFFF;
+  color: var(--text);
 }
 
 .hero-title .accent {
-  background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #C084FC 100%);
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -489,7 +490,7 @@ h3 {
 
 .hero .lead {
   font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
   line-height: 1.65;
   max-width: 560px;
   margin-bottom: 32px;
@@ -499,31 +500,29 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .hero-btn-main {
-  background: linear-gradient(135deg, #4D61FF 0%, #8B5CF6 100%);
+  background: var(--gradient);
   color: #FFFFFF;
   font-weight: 600;
   padding: 14px 28px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(77, 97, 255, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(77, 97, 255, 0.25);
+  border: 1px solid transparent;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-btn-main:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 35px rgba(77, 97, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(77, 97, 255, 0.4);
 }
 
 .hero-btn-sub {
-  background: rgba(17, 20, 36, 0.7);
-  backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   padding: 14px 24px;
   border-radius: 12px;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -531,12 +530,11 @@ h3 {
 
 .hero-btn-sub:hover {
   border-color: var(--blue);
-  color: #FFFFFF;
-  background: rgba(77, 97, 255, 0.15);
+  color: var(--blue);
   transform: translateY(-2px);
 }
 
-/* Micro Metrics Row */
+/* Micro Metrics Row (Liquid Glass) */
 .hero-micro-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -544,7 +542,7 @@ h3 {
   width: 100%;
   max-width: 560px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border);
 }
 
 @media (max-width: 600px) {
@@ -558,31 +556,32 @@ h3 {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(17, 20, 36, 0.6);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
 }
 
 .micro-metric-item:hover {
-  border-color: rgba(77, 97, 255, 0.35);
-  background: rgba(17, 20, 36, 0.85);
+  border-color: rgba(77, 97, 255, 0.4);
   transform: translateY(-1px);
 }
 
 .metric-icon {
-  font-size: 16px;
+  font-size: 15px;
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(77, 97, 255, 0.15);
-  border: 1px solid rgba(77, 97, 255, 0.25);
+  background: rgba(77, 97, 255, 0.08);
+  border: 1px solid rgba(77, 97, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #A78BFA;
+  color: var(--blue);
   flex-shrink: 0;
 }
 
@@ -594,19 +593,19 @@ h3 {
 .metric-text strong {
   font-size: 12px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text);
   line-height: 1.2;
 }
 
 .metric-text span {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-top: 2px;
 }
 
-/* Right Visual Column with 3D Hologram & Floating Chips */
+/* Right Visual Column with Liquid Glass Floating Chips */
 .hero-visual-col {
   display: flex;
   justify-content: center;
@@ -617,7 +616,7 @@ h3 {
 .hero-robot-wrapper {
   perspective: 1200px;
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   aspect-ratio: 1 / 1;
   position: relative;
   display: flex;
@@ -626,34 +625,34 @@ h3 {
   animation: robot-bob 6s ease-in-out infinite;
 }
 
-/* Floating Live Status Chips */
+/* Liquid Glass Floating Chips */
 .hero-float-chip {
   position: absolute;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(13, 15, 26, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(77, 97, 255, 0.3);
+  background: var(--bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: 50px;
   font-size: 12px;
   font-weight: 600;
-  color: #FFFFFF;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(77, 97, 255, 0.15);
+  color: var(--text);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   z-index: 10;
   pointer-events: none;
 }
 
 .chip-top-right {
-  top: -15px;
+  top: -12px;
   right: -10px;
   animation: chip-float-1 5s ease-in-out infinite;
 }
 
 .chip-bottom-left {
-  bottom: -15px;
+  bottom: -12px;
   left: -15px;
   animation: chip-float-2 6s ease-in-out infinite;
 }
@@ -673,19 +672,19 @@ h3 {
   height: 6px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 8px #10B981;
+  box-shadow: 0 0 6px #10B981;
 }
 
 .chip-spark {
-  color: #A78BFA;
+  color: var(--purple);
   font-size: 11px;
 }
 
 .strip-sep {
-  color: #8B5CF6;
+  color: var(--blue);
   font-size: 10px;
   margin: 0 16px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .robot-card {
@@ -715,40 +714,19 @@ h3 {
 .robot-bg-inner {
   width: 100%;
   height: 100%;
-  background: var(--card-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: transparent;
   border-radius: 80px;
-  /* matches logo's rx=100 relative to 500x500 box */
-  border: 1px solid var(--card-border);
-  box-shadow: 0 30px 60px rgba(77, 97, 255, 0.06),
-    0 0 40px rgba(157, 80, 255, 0.04),
-    inset 0 0 25px var(--card-inset);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-/* Subtle cybernetic grid texture inside the logo card for a premium feel */
-.robot-bg-inner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(77, 97, 255, 0.08) 1.5px, transparent 1.5px),
-    linear-gradient(rgba(77, 97, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(77, 97, 255, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px, 24px 24px, 24px 24px;
-  background-position: center;
-  opacity: 0.8;
-}
-
-/* Ambient glow spotlight behind the robot face */
+/* Subtle ambient aura behind the robot face */
 .robot-bg-inner::after {
   content: '';
   position: absolute;
-  inset: 15%;
-  background: radial-gradient(circle, rgba(77, 97, 255, 0.18) 0%, rgba(157, 80, 255, 0.06) 65%, transparent 100%);
-  filter: blur(15px);
+  inset: 10%;
+  background: radial-gradient(circle, rgba(77, 97, 255, 0.15) 0%, rgba(157, 80, 255, 0.05) 50%, transparent 80%);
+  filter: blur(25px);
   pointer-events: none;
 }
 

@@ -181,6 +181,8 @@
     function render(time) {
       if (!isVisible) return;
 
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
       // Smooth mouse lerp
       mouse.x += (mouse.targetX - mouse.x) * 0.12;
       mouse.y += (mouse.targetY - mouse.y) * 0.12;
@@ -191,6 +193,10 @@
       const cols = Math.ceil(width / cellSize) + 1;
       const rows = Math.ceil(height / cellSize) + 1;
 
+      const baseAlpha = isDark ? 0.07 : 0.04;
+      const boostAlpha = isDark ? 0.22 : 0.12;
+      const strokeBase = isDark ? '77, 97, 255' : '77, 97, 255';
+
       // Vertical lines
       for (let c = 0; c < cols; c++) {
         const x = c * cellSize;
@@ -199,13 +205,13 @@
         ctx.lineTo(x, height);
 
         const dx = Math.abs(x - mouse.x);
-        let alpha = 0.045;
+        let alpha = baseAlpha;
         if (mouse.active && dx < 200) {
-          alpha += (1 - dx / 200) * 0.18;
+          alpha += (1 - dx / 200) * boostAlpha;
         }
 
-        ctx.strokeStyle = `rgba(77, 97, 255, ${alpha})`;
-        ctx.lineWidth = dx < 80 && mouse.active ? 1.2 : 0.75;
+        ctx.strokeStyle = `rgba(${strokeBase}, ${alpha})`;
+        ctx.lineWidth = dx < 80 && mouse.active ? 1.1 : 0.75;
         ctx.stroke();
       }
 
@@ -217,18 +223,21 @@
         ctx.lineTo(width, y);
 
         const dy = Math.abs(y - mouse.y);
-        let alpha = 0.045;
+        let alpha = baseAlpha;
         if (mouse.active && dy < 200) {
-          alpha += (1 - dy / 200) * 0.18;
+          alpha += (1 - dy / 200) * boostAlpha;
         }
 
-        ctx.strokeStyle = `rgba(77, 97, 255, ${alpha})`;
-        ctx.lineWidth = dy < 80 && mouse.active ? 1.2 : 0.75;
+        ctx.strokeStyle = `rgba(${strokeBase}, ${alpha})`;
+        ctx.lineWidth = dy < 80 && mouse.active ? 1.1 : 0.75;
         ctx.stroke();
       }
 
       // 2. Draw Intersection Crosshairs (+) and Dots at Grid Nodes
       const crossSize = 3;
+      const crossColor = isDark ? '167, 139, 250' : '90, 80, 220';
+      const nodeFill = isDark ? '#FFFFFF' : '#4D61FF';
+
       for (let c = 0; c < cols; c++) {
         const x = c * cellSize;
         for (let r = 0; r < rows; r++) {
@@ -237,25 +246,27 @@
 
           if (mouse.active && dist < 220) {
             const factor = 1 - dist / 220;
-            const glowAlpha = factor * 0.8;
+            const glowAlpha = factor * (isDark ? 0.85 : 0.6);
 
             ctx.beginPath();
             ctx.moveTo(x - crossSize - factor * 2, y);
             ctx.lineTo(x + crossSize + factor * 2, y);
             ctx.moveTo(x, y - crossSize - factor * 2);
             ctx.lineTo(x, y + crossSize + factor * 2);
-            ctx.strokeStyle = `rgba(167, 139, 250, ${glowAlpha})`;
-            ctx.lineWidth = 1.2;
+            ctx.strokeStyle = `rgba(${crossColor}, ${glowAlpha})`;
+            ctx.lineWidth = 1.1;
             ctx.stroke();
 
             ctx.beginPath();
-            ctx.arc(x, y, 1.5 + factor, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${glowAlpha * 0.9})`;
+            ctx.arc(x, y, 1.4 + factor, 0, Math.PI * 2);
+            ctx.fillStyle = nodeFill;
+            ctx.globalAlpha = glowAlpha;
             ctx.fill();
+            ctx.globalAlpha = 1.0;
           } else if ((c + r) % 3 === 0) {
             ctx.beginPath();
-            ctx.arc(x, y, 1, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(77, 97, 255, 0.12)';
+            ctx.arc(x, y, 0.9, 0, Math.PI * 2);
+            ctx.fillStyle = isDark ? 'rgba(77, 97, 255, 0.12)' : 'rgba(77, 97, 255, 0.08)';
             ctx.fill();
           }
         }
@@ -264,8 +275,8 @@
       // 3. Draw Interactive Cursor Spotlight Glow
       if (mouse.active && mouse.x > 0 && mouse.y > 0) {
         const radGlow = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
-        radGlow.addColorStop(0, 'rgba(77, 97, 255, 0.14)');
-        radGlow.addColorStop(0.5, 'rgba(157, 80, 255, 0.05)');
+        radGlow.addColorStop(0, isDark ? 'rgba(77, 97, 255, 0.14)' : 'rgba(77, 97, 255, 0.07)');
+        radGlow.addColorStop(0.5, isDark ? 'rgba(157, 80, 255, 0.05)' : 'rgba(157, 80, 255, 0.02)');
         radGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = radGlow;
         ctx.beginPath();
