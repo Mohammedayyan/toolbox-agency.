@@ -954,5 +954,17 @@
       }, 300);
     });
   }
+
+  // ─── GOOGLE REVIEWS TICKER INTERACTION HANDLER ───
+  const reviewTracks = document.querySelectorAll('.reviews-scroll-track');
+  reviewTracks.forEach((track) => {
+    // Pause animation when focused via keyboard / tab navigation
+    track.addEventListener('focusin', () => {
+      track.style.animationPlayState = 'paused';
+    });
+    track.addEventListener('focusout', () => {
+      track.style.animationPlayState = '';
+    });
+  });
 })();
 

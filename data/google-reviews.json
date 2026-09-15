@@ -1,4 +1,117 @@
 {
-  "count": 10,
-  "updated": "2026-05-19"
+  "placeName": "Toolbox Studio | Digital Experience & UX Design",
+  "rating": 4.8,
+  "totalReviews": 12,
+  "googleMapsUrl": "https://maps.app.goo.gl/CxJ3GFyFbEBAgtw19",
+  "reviews": [
+    {
+      "id": "rev-1",
+      "authorName": "Doha Elhour",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "I worked with him on designing a website interface, and the experience was outstanding. He has a clear vision and a high level of professionalism in translating ideas into a seamless user experience. The design was modern, precise, and perfectly aligned with the project’s identity. I highly recommend his services.",
+      "language": "en",
+      "ownerResponse": null
+    },
+    {
+      "id": "rev-2",
+      "authorName": "Le Beautignolle",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "J’ai eu l’occasion de collaborer avec Toolbox Studio et je recommande vivement leurs services. Dynamique, sérieux et très professionnel. Il travaille avec soin et rigueur, tout en étant à l’écoute des besoins du client. Il a su comprendre mes attentes rapidement et livrer un résultat à la hauteur. Une vraie valeur ajoutée pour tout projet ! N’hésitez pas à faire appel à lui.",
+      "language": "fr",
+      "ownerResponse": "Thank you so much for your kind words and for taking the time to share your experience! It was a real pleasure collaborating with you. I'm delighted that our work met your expectations."
+    },
+    {
+      "id": "rev-3",
+      "authorName": "Fatima Azizi",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "Très bonne expérience avec l’équipe Toolbox studio ! Ils ont conçu une belle landing page pour mon agence spécialisée en UI/UX design. Travail de qualité et communication fluide. Je recommande !",
+      "language": "fr",
+      "ownerResponse": null
+    },
+    {
+      "id": "rev-4",
+      "authorName": "Chichi Ayoub",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "Best service ever , highly recommended",
+      "language": "en",
+      "ownerResponse": "Thank’s Ayoub ✌️❤️"
+    },
+    {
+      "id": "rev-5",
+      "authorName": "Loubna",
+      "rating": 5,
+      "relativeTime": "3 months ago",
+      "text": "A very good designer",
+      "language": "en",
+      "ownerResponse": "Thank you Loubna"
+    },
+    {
+      "id": "rev-6",
+      "authorName": "sara aithssaine",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "You are the best 🩶🩶🩶",
+      "language": "en",
+      "ownerResponse": "Thank you so much sara🤎"
+    },
+    {
+      "id": "rev-7",
+      "authorName": "Hamza Laidi",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "Good service bro Allahoma yasser",
+      "language": "en",
+      "ownerResponse": null
+    },
+    {
+      "id": "rev-8",
+      "authorName": "Centrawi officiel",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "Thank you so mch mohammed👍",
+      "language": "en",
+      "ownerResponse": null
+    },
+    {
+      "id": "rev-9",
+      "authorName": "Bouchaib Ayyan",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "Good service✌️",
+      "language": "en",
+      "ownerResponse": "✌️"
+    },
+    {
+      "id": "rev-10",
+      "authorName": "Rafik Mhammed",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "Very good",
+      "language": "en",
+      "ownerResponse": null
+    },
+    {
+      "id": "rev-11",
+      "authorName": "Chaime Jaidi",
+      "rating": 5,
+      "relativeTime": "8 months ago",
+      "text": "★★★★★ 5-Star Verified Google Rating",
+      "language": "en",
+      "ownerResponse": null
+    },
+    {
+      "id": "rev-12",
+      "authorName": "Lilla H.",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "★★★★★ 5-Star Verified Local Guide Review",
+      "language": "en",
+      "isLocalGuide": true,
+      "ownerResponse": "Thank you Lilla"
+    }
+  ]
 }
