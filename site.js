@@ -659,8 +659,7 @@
       deliverables: "Offline-First Web Platform, Cybernetic Dashboard UI, Telemetry Widgets, Local Data Sync Engine",
       desc: "Oncilla is an offline-first enterprise operating system designed for schools and mission-critical institutions to operate 100% autonomously without internet dependency. Toolbox Studio architected an authoritative, high-contrast dark-mode web platform, cybernetic data visualization dashboards, student management workflows, and zero-latency local synchronization interfaces.",
       images: [
-        "images/work/oncilla_p1.jpg?v=30",
-        "images/work/oncilla_p2.jpg?v=30"
+        "images/work/oncilla_full.jpg?v=100"
       ]
     },
     chapitre1: {
