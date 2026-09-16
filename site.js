@@ -651,15 +651,16 @@
       ]
     },
     oncilla: {
-      title: "Oncilla Space — Operating System & Digital Infrastructure",
-      subtitle: "Websites • Digital Product • Software Architecture",
-      client: "Oncilla Space",
+      title: "Oncilla OS — Offline-First School Management & Digital Infrastructure",
+      subtitle: "Websites • Systems & Digital • Software Architecture",
+      client: "Oncilla OS",
       year: "2026",
       liveUrl: "https://www.oncilla.space/",
-      deliverables: "Product Landing Page, Operating System Interface, Design Tokens, Web Architecture",
-      desc: "Oncilla is an offline-first enterprise operating system designed for mission-critical digital sovereignty and autonomous workflows. We developed an authoritative, high-contrast dark-mode web platform and product interface.",
+      deliverables: "Offline-First Web Platform, Cybernetic Dashboard UI, Telemetry Widgets, Local Data Sync Engine",
+      desc: "Oncilla is an offline-first enterprise operating system designed for schools and mission-critical institutions to operate 100% autonomously without internet dependency. Toolbox Studio architected an authoritative, high-contrast dark-mode web platform, cybernetic data visualization dashboards, student management workflows, and zero-latency local synchronization interfaces.",
       images: [
-        "images/work/logo_oncilla.png"
+        "images/work/oncilla_thumb.jpg?v=10",
+        "images/work/oncilla_full.png"
       ]
     },
     chapitre1: {
