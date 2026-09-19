@@ -667,7 +667,7 @@
       subtitle: "Websites • E-Commerce Platform • Digital Retail Architecture",
       client: "Mobilis Care",
       year: "2026",
-      liveUrl: "http://localhost:5173/",
+      liveUrl: "https://toolboxstudio.me/mobilis-care/",
       deliverables: "E-Commerce Web Architecture, Skincare Merchandising, Brand Hubs, Responsive UI/UX, Localized Checkout Flow",
       desc: "Mobilis Care is a premier online parapharmacy and dermo-cosmetics retail platform in Morocco. Toolbox Studio engineered a luxury digital shopping experience featuring curated skincare collections, official pharmaceutical brand directories, responsive product showcases, verified customer social proof, and streamlined high-converting order flows.",
       images: [

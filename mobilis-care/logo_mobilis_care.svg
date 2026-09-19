@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <defs>
+    <linearGradient id="mobilisLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0284c7" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Logo Icon Badge -->
+  <g transform="translate(6, 6)" filter="url(#logoShadow)">
+    <rect width="48" height="48" rx="14" fill="url(#mobilisLogoGrad)" />
+    <!-- Vertical Bar -->
+    <rect x="20.5" y="12" width="7" height="24" rx="3.5" fill="#ffffff"/>
+    <!-- Horizontal Bar -->
+    <rect x="12" y="20.5" width="24" height="7" rx="3.5" fill="#ffffff"/>
+    <!-- Center Core Dot -->
+    <circle cx="24" cy="24" r="2.5" fill="#38bdf8"/>
+    <!-- Care Sparkle -->
+    <path d="M36 10L37 13L40 14L37 15L36 18L35 15L32 14L35 13Z" fill="#ffffff" opacity="0.95"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="64" y="32" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="800" fill="#0f172a" letter-spacing="-0.5">
+    Mobilis<tspan fill="#0284c7">Care</tspan><tspan fill="#06b6d4">.</tspan>
+  </text>
+  <text x="65" y="46" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.8" text-transform="uppercase">
+    PARAPHARMACIE &amp; SANTÉ
+  </text>
+</svg>

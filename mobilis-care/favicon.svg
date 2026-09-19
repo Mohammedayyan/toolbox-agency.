@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="mobilisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <!-- Premium Squircle Badge -->
+  <rect x="6" y="6" width="88" height="88" rx="26" fill="url(#mobilisGrad)" />
+
+  <!-- Stylized "M" + Medical Care Cross & Botanical Leaf Motif -->
+  <!-- Left Pillar of M -->
+  <path d="M26 66V36C26 33.7909 27.7909 32 30 32C32.2091 32 34 33.7909 34 36V66C34 68.2091 32.2091 70 30 70C27.7909 70 26 68.2091 26 66Z" fill="#ffffff" />
+  
+  <!-- Right Pillar of M -->
+  <path d="M66 66V36C66 33.7909 67.7909 32 70 32C72.2091 32 74 33.7909 74 36V66C74 68.2091 72.2091 70 70 70C67.7909 70 66 68.2091 66 66Z" fill="#ffffff" />
+
+  <!-- Center Care Cross & Arch -->
+  <path d="M50 24V44M40 34H60" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Botanical Leaf Accent intersecting dynamically -->
+  <path d="M50 48C50 48 64 52 64 68C50 68 46 56 50 48Z" fill="url(#leafGrad)" />
+  <path d="M50 48C50 48 36 52 36 68C50 68 54 56 50 48Z" fill="#ffffff" opacity="0.9" />
+
+  <!-- Pulse Center Core -->
+  <circle cx="50" cy="34" r="3.5" fill="#10b981" />
+</svg>
