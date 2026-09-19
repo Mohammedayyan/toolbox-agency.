@@ -651,15 +651,44 @@
       ]
     },
     oncilla: {
-      title: "Oncilla OS — Offline-First School Management & Digital Infrastructure",
-      subtitle: "Websites • Systems & Digital • Software Architecture",
-      client: "Oncilla OS",
+      title: "Oncilla OS — Offline-First School Management & Operations Infrastructure",
+      subtitle: "Systems & Digital • Software Architecture • UX Design System",
+      client: "Oncilla OS (Proprietary Startup & UX System)",
       year: "2026",
       liveUrl: "https://www.oncilla.space/",
-      deliverables: "Offline-First Web Platform, Cybernetic Dashboard UI, Telemetry Widgets, Local Data Sync Engine",
-      desc: "Oncilla is an offline-first enterprise operating system designed for schools and mission-critical institutions to operate 100% autonomously without internet dependency. Toolbox Studio architected an authoritative, high-contrast dark-mode web platform, cybernetic data visualization dashboards, student management workflows, and zero-latency local synchronization interfaces.",
+      deliverables: "Offline-First Desktop System, Cybernetic Operations Dashboard, Lifecycle Attendance Matrix, Local CRM Pipeline, Instant Candidate Dossier Drawer, High-Density Data Capture Modals",
+      desc: "Oncilla OS is an autonomous, local-first administrative operating system engineered for educational institutions operating in high-demand or network-constrained environments. Designed and architected from ground zero by Mohammed Ayyan as a flagship product and startup, the system eliminates cloud vulnerability and monthly SaaS bloat through 100% offline local PostgreSQL database synchronization, immutable audit ledgers, and zero-latency desktop workflows. The UX balances high-density information architecture with dark cybernetic telemetry, keyboard-driven navigation, and zero-loss local state persistence.",
       images: [
-        "images/work/oncilla_full.jpg?v=100"
+        {
+          src: "images/work/oncilla_p1.jpg?v=300",
+          badge: "01 • Executive Telemetry",
+          title: "Executive Command Dashboard & Real-Time Operational Velocity",
+          desc: "Central command center providing school founders and directors immediate, zero-latency visibility over student enrollment velocity, active instructor counts, 6-month net cashflow performance, and cryptographic local database status without requiring internet connectivity."
+        },
+        {
+          src: "images/work/oncilla_p2.jpg?v=300",
+          badge: "02 • Lifecycle Matrix",
+          title: "Live Classroom Board, Attendance Lifecycle & Immutable Activity Ledger",
+          desc: "Interactive lifecycle board tracking classroom sessions in real time (Scheduled → In Session → Attendance Review → Completed). Features instructor hover popovers, attendance ratios, and an append-only immutable audit trail ensuring accountability across local administrative staff."
+        },
+        {
+          src: "images/work/oncilla_p3.jpg?v=300",
+          badge: "03 • Local-First CRM",
+          title: "Candidates Pipeline, Multi-Parameter Search & Admissions CRM",
+          desc: "High-throughput student candidate registry with multi-column filtering by CEFR target levels (A1–C2), target languages, and CNIE national IDs. Supports instant CSV/Excel data import and one-click lead conversion directly on local hardware."
+        },
+        {
+          src: "images/work/oncilla_p4.jpg?v=300",
+          badge: "04 • Dossier Architecture",
+          title: "Candidate Deep Profile Drawer & Tuition Balance Architecture",
+          desc: "Non-disruptive slide-out dossier drawer allowing administrators to inspect candidate financial balances, remaining tuition debt, payment histories, and academic targets without losing scroll position in the main table."
+        },
+        {
+          src: "images/work/oncilla_p5.jpg?v=300",
+          badge: "05 • High-Density Data Capture",
+          title: "Focused Keyboard-Driven Registration Modal & Data Integrity Validation",
+          desc: "Optimized high-density data capture modal designed for rapid keyboard-only entry. Includes strict input masking, optional contact fields, tuition computation formulas, and instantaneous local commit guarantees."
+        }
       ]
     },
     mobiliscare: {
@@ -856,17 +885,67 @@
     const waText = encodeURIComponent(`Hello Mohammed, I explored your ${data.title} project on Toolbox Studio and would like to discuss a similar project.`);
     modalWA.href = `https://wa.me/212776332317?text=${waText}`;
 
-    // Populate images
+    // Populate images & case study screens
     modalGallery.innerHTML = '';
-    data.images.forEach((imgSrc, idx) => {
-      const imgWrap = document.createElement('div');
-      imgWrap.className = 'modal-gallery-img';
-      const img = document.createElement('img');
-      img.src = imgSrc;
-      img.alt = `${data.title} - Visual ${idx + 1}`;
-      img.loading = idx === 0 ? 'eager' : 'lazy';
-      imgWrap.appendChild(img);
-      modalGallery.appendChild(imgWrap);
+    data.images.forEach((item, idx) => {
+      const isObject = typeof item === 'object' && item !== null;
+      const imgSrc = isObject ? item.src : item;
+      const imgAlt = isObject && item.title ? item.title : `${data.title} - Visual ${idx + 1}`;
+
+      if (isObject && (item.title || item.desc)) {
+        const itemCard = document.createElement('div');
+        itemCard.className = 'modal-gallery-item';
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'modal-gallery-img';
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = imgAlt;
+        img.loading = idx === 0 ? 'eager' : 'lazy';
+        imgWrap.appendChild(img);
+        itemCard.appendChild(imgWrap);
+
+        const captionWrap = document.createElement('div');
+        captionWrap.className = 'modal-gallery-caption';
+
+        const headerWrap = document.createElement('div');
+        headerWrap.className = 'modal-caption-header';
+
+        if (item.badge) {
+          const badgeEl = document.createElement('span');
+          badgeEl.className = 'modal-caption-badge';
+          badgeEl.textContent = item.badge;
+          headerWrap.appendChild(badgeEl);
+        }
+
+        if (item.title) {
+          const titleEl = document.createElement('h4');
+          titleEl.className = 'modal-caption-title';
+          titleEl.textContent = item.title;
+          headerWrap.appendChild(titleEl);
+        }
+
+        captionWrap.appendChild(headerWrap);
+
+        if (item.desc) {
+          const descEl = document.createElement('p');
+          descEl.className = 'modal-caption-text';
+          descEl.textContent = item.desc;
+          captionWrap.appendChild(descEl);
+        }
+
+        itemCard.appendChild(captionWrap);
+        modalGallery.appendChild(itemCard);
+      } else {
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'modal-gallery-img';
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = imgAlt;
+        img.loading = idx === 0 ? 'eager' : 'lazy';
+        imgWrap.appendChild(img);
+        modalGallery.appendChild(imgWrap);
+      }
     });
 
     try {
