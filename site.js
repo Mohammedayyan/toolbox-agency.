@@ -671,7 +671,7 @@
       deliverables: "E-Commerce Web Architecture, Skincare Merchandising, Brand Hubs, Responsive UI/UX, Localized Checkout Flow",
       desc: "Mobilis Care is a premier online parapharmacy and dermo-cosmetics retail platform in Morocco. Toolbox Studio engineered a luxury digital shopping experience featuring curated skincare collections, official pharmaceutical brand directories, responsive product showcases, verified customer social proof, and streamlined high-converting order flows.",
       images: [
-        "images/work/mobiliscare_full.jpg?v=105"
+        "images/work/mobiliscare_full_v2.jpg?v=200"
       ]
     },
     chapitre1: {
