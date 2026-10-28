@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <!-- Monogramme -->
+  <g transform="translate(6, 4)">
+    <!-- Open Champagne Cycle Ring -->
+    <circle cx="20" cy="20" r="16" fill="none" stroke="#C29D59" stroke-width="2" stroke-linecap="round" stroke-dasharray="82 18" stroke-dashoffset="12" />
+    <!-- Rebirth Sparkle -->
+    <circle cx="33" cy="11" r="2" fill="#C29D59" />
+    <!-- Serif R -->
+    <text x="20" y="26.5" font-family="'Cormorant Garamond', Georgia, serif" font-size="20" font-weight="600" fill="#FAF8F5" text-anchor="middle">R</text>
+  </g>
+
+  <!-- Wordmark REVIVO in Warm White/Papier -->
+  <text x="64" y="29.5" font-family="'Cormorant Garamond', Georgia, serif" font-size="22" font-weight="600" fill="#FAF8F5" letter-spacing="4">REVIVO</text>
+</svg>

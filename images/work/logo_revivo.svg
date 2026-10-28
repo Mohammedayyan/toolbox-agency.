@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48">
+  <!-- Stylized Modern Tech R Badge -->
+  <g transform="translate(4, 6)">
+    <rect width="36" height="36" rx="4" fill="#E11D48" />
+    <path d="M11 26V10H20C23 10 25 12 25 15C25 17.5 23.5 19.5 21 20L26 26H21L16.5 20.5H15V26H11ZM15 17.5H19.5C20.8 17.5 21.5 16.5 21.5 15C21.5 13.5 20.8 12.5 19.5 12.5H15V17.5Z" fill="#FFFFFF" />
+  </g>
+  <!-- Bold Modern Typography REVIVO -->
+  <text x="48" y="32" font-family="'Montserrat', -apple-system, sans-serif" font-size="26" font-weight="900" fill="#000000" letter-spacing="1">REVIVO</text>
+  <text x="180" y="24" font-family="'Montserrat', -apple-system, sans-serif" font-size="10" font-weight="900" fill="#E11D48">.MA</text>
+</svg>

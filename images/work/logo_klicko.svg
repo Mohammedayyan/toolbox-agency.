@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <!-- Clean Monogram K Badge -->
+  <g transform="translate(4, 6)">
+    <rect width="36" height="36" rx="10" fill="#000000" />
+    <path d="M12 9 V27 H16.5 V19 L21.5 27 H27 L20 17 L26.5 9 H21 L16.5 16 V9 H12 Z" fill="#FFFFFF" />
+    <circle cx="28" cy="10" r="2.5" fill="#2189ff" />
+  </g>
+  <!-- Modern Geometric Wordmark KLICKO -->
+  <text x="50" y="31" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#000000" letter-spacing="-0.5">KLICKO</text>
+  <circle cx="152" cy="28" r="3.5" fill="#2189ff" />
+</svg>

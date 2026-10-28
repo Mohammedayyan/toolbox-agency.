@@ -638,6 +638,30 @@
 
   // ─── $100M AGENCY PORTFOLIO & WORK LIGHTBOX MODAL ───
   const workProjects = {
+    klicko: {
+      title: "KLICKO — Smartphones & High-Tech Store",
+      subtitle: "Websites • E-Commerce Store",
+      client: "KLICKO",
+      year: "2026",
+      liveUrl: "./klicko/",
+      deliverables: "E-Commerce Architecture, UI/UX Design, Product Catalog, Order System",
+      desc: "Plateforme e-commerce moderne dédiée à la vente de smartphones neufs et reconditionnés, avec catalogue interactif, filtres de recherche et commande rapide.",
+      images: [
+        "images/work/klicko_full.jpg?v=1"
+      ]
+    },
+    revivo: {
+      title: "REVIVO — Smartphones & Electronics Store",
+      subtitle: "Websites • E-Commerce Store",
+      client: "REVIVO",
+      year: "2026",
+      liveUrl: "./revivo/",
+      deliverables: "E-Commerce Architecture, UI/UX Design, Trade-In Valuator, Order Management",
+      desc: "Boutique en ligne moderne pour smartphones et produits high-tech avec système d'estimation de reprise, gestion des commandes et catalogue complet.",
+      images: [
+        "images/work/revivo_full.jpg?v=1"
+      ]
+    },
     paraarredwan: {
       title: "Para Arredwan — Healthcare E-Commerce & Retail Architecture",
       subtitle: "Websites • E-Commerce Platform • Digital Retail Architecture",
@@ -900,7 +924,7 @@
   document.addEventListener('click', (e) => {
     const trigger = e.target.closest('[data-project]');
     if (trigger) {
-      if (trigger.tagName === 'A' && trigger.getAttribute('href') && trigger.getAttribute('href').startsWith('http')) {
+      if (trigger.tagName === 'A' && trigger.getAttribute('href') && (trigger.getAttribute('href').startsWith('http') || trigger.getAttribute('href').includes('revivo') || trigger.getAttribute('href').startsWith('.'))) {
         return;
       }
       e.preventDefault();

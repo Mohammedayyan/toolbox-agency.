@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="klickoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="100%" stop-color="#181a1f" />
+    </linearGradient>
+  </defs>
+  <!-- Sleek Obsidian Pill Background -->
+  <rect width="64" height="64" rx="16" fill="url(#klickoGrad)" />
+  <!-- Clean High-Tech K Monogram -->
+  <path d="M20 16 V48 H27 V34.5 L36.5 48 H45 L33.5 31.5 L43.5 16 H35 L27 28.5 V16 H20 Z" fill="#FFFFFF" />
+  <!-- Samsung Electric Blue Tech Dot -->
+  <circle cx="47" cy="18" r="4" fill="#2189ff" />
+</svg>
