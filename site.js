@@ -639,7 +639,7 @@
   // ─── $100M AGENCY PORTFOLIO & WORK LIGHTBOX MODAL ───
   const workProjects = {
     klicko: {
-      title: "KLICKO — Smartphones & High-Tech Store",
+      title: "KLICKO: Smartphones & High-Tech Store",
       subtitle: "Websites • E-Commerce Store",
       client: "KLICKO",
       year: "2026",
@@ -651,7 +651,7 @@
       ]
     },
     revivo: {
-      title: "REVIVO — Smartphones & Electronics Store",
+      title: "REVIVO: Smartphones & Electronics Store",
       subtitle: "Websites • E-Commerce Store",
       client: "REVIVO",
       year: "2026",
@@ -663,7 +663,7 @@
       ]
     },
     paraarredwan: {
-      title: "Para Arredwan — Healthcare E-Commerce & Retail Architecture",
+      title: "Para Arredwan: Healthcare E-Commerce & Retail Architecture",
       subtitle: "Websites • E-Commerce Platform • Digital Retail Architecture",
       client: "Para Arredwan",
       year: "2026",
@@ -675,19 +675,19 @@
       ]
     },
     oncilla: {
-      title: "Oncilla OS — Offline-First School Management & Digital Infrastructure",
-      subtitle: "Websites • Systems & Digital • Software Architecture",
-      client: "Oncilla OS",
+      title: "Oncilla: Language Academy Management System & High-Conversion Landing Page",
+      subtitle: "Websites • EdTech Platforms • High-Impact Landing Page",
+      client: "Oncilla",
       year: "2026",
       liveUrl: "https://www.oncilla.space/",
-      deliverables: "Offline-First Web Platform, Cybernetic Dashboard UI, Telemetry Widgets, Local Data Sync Engine",
-      desc: "Oncilla is an offline-first enterprise operating system designed for schools and mission-critical institutions to operate 100% autonomously without internet dependency. Toolbox Studio architected an authoritative, high-contrast dark-mode web platform, cybernetic data visualization dashboards, student management workflows, and zero-latency local synchronization interfaces.",
+      deliverables: "High-Conversion Landing Page, UI/UX Architecture, Dark Mode Interface, Curriculum & Student Enrollment Funnel",
+      desc: "Oncilla is a modern language academy system designed for educational institutions and language academies. Toolbox Studio architected an authoritative, high-converting dark cybernetic landing page and interface showcase, featuring conversion-focused enrollment funnels, interactive curriculum modules, and seamless student management workflows.",
       images: [
         "images/work/oncilla_full.jpg?v=100"
       ]
     },
     mobiliscare: {
-      title: "Mobilis Care — Dermo-Cosmétique & Healthcare E-Commerce Architecture",
+      title: "Mobilis Care: Dermo-Cosmétique & Healthcare E-Commerce Architecture",
       subtitle: "Websites • E-Commerce Platform • Digital Retail Architecture",
       client: "Mobilis Care",
       year: "2026",
@@ -699,7 +699,7 @@
       ]
     },
     chapitre1: {
-      title: "Chapitre 1 — Contemporary Editorial Art Direction",
+      title: "Chapitre 1: Contemporary Editorial Art Direction",
       subtitle: "Editorial Design • Publication Grid • Print Direction",
       client: "Chapitre 1 Magazine",
       year: "2026",
@@ -713,7 +713,7 @@
       ]
     },
     mk: {
-      title: "MK Studio — Visual Identity & Merchandise Architecture",
+      title: "MK Studio: Visual Identity & Merchandise Architecture",
       subtitle: "Brand Identity • Stationery • Packaging Collateral",
       client: "MK Studio",
       year: "2026",
@@ -726,7 +726,7 @@
       ]
     },
     magictouch: {
-      title: "Magic Touch — Automotive Luxury & Corporate Identity",
+      title: "Magic Touch: Automotive Luxury & Corporate Identity",
       subtitle: "Brand Guidelines • Luxury Detailing • Vehicle Livery",
       client: "Magic Touch Studio",
       year: "2025",
@@ -740,7 +740,7 @@
       ]
     },
     purrfect: {
-      title: "Purrfect — Modern Pet Lifestyle Brand Guidelines",
+      title: "Purrfect: Modern Pet Lifestyle Brand Guidelines",
       subtitle: "Brand Manual • Design Tokens • Packaging Architecture",
       client: "Purrfect Lifestyle",
       year: "2025",
@@ -754,7 +754,7 @@
       ]
     },
     idokanino: {
-      title: "Idokanino — Organic Heritage Visual Identity",
+      title: "Idokanino: Organic Heritage Visual Identity",
       subtitle: "Brand Identity • Heritage Branding • Artisanal Packaging",
       client: "Idokanino",
       year: "2025",
@@ -765,7 +765,7 @@
       ]
     },
     googlefocus: {
-      title: "Google Focus Series — Exhibition Print & Campaign Design",
+      title: "Google Focus Series: Exhibition Print & Campaign Design",
       subtitle: "Print Direction • Poster Series • Visual Campaign",
       client: "Focus Series Exhibition",
       year: "2025",
@@ -776,7 +776,7 @@
       ]
     },
     softtouch: {
-      title: "Soft Touch Skincare — Luxury Cosmetic Identity & Packaging",
+      title: "Soft Touch Skincare: Luxury Cosmetic Identity & Packaging",
       subtitle: "Brand Identity • Packaging Architecture • Art Direction",
       client: "Soft Touch Paris",
       year: "2025",
@@ -789,7 +789,7 @@
       ]
     },
     deutsch: {
-      title: "Deutsch Brandmark — Modern Wordmark & Visual System",
+      title: "Deutsch Brandmark: Modern Wordmark & Visual System",
       subtitle: "Logomark System • Typography Architecture • Brand Guidelines",
       client: "Deutsch Corp",
       year: "2025",
@@ -967,7 +967,7 @@
       const service = document.getElementById('contact-service')?.value || 'General Project Inquiry';
       const message = document.getElementById('contact-message')?.value.trim() || '';
 
-      const subject = encodeURIComponent(`Project Inquiry: ${service} — ${name}`);
+      const subject = encodeURIComponent(`Project Inquiry: ${service} | ${name}`);
       const body = encodeURIComponent(
         `Hello Mohammed,\n\n` +
         `Name: ${name}\n` +
