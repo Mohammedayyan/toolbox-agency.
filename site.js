@@ -638,6 +638,18 @@
 
   // ─── $100M AGENCY PORTFOLIO & WORK LIGHTBOX MODAL ───
   const workProjects = {
+    bilaphone: {
+      title: "BILAPHONE: Smartphones & High-Tech Store",
+      subtitle: "Websites • E-Commerce Store",
+      client: "BILAPHONE",
+      year: "2026",
+      liveUrl: "https://www.bilaphone.store",
+      deliverables: "E-Commerce Architecture, Admin Dashboard, Product Catalog, WhatsApp Ordering",
+      desc: "Plateforme e-commerce moderne dédiée à la vente de smartphones neufs et occasions avec espace gérant (admin dashboard), gestion des commandes et catalogue interactif.",
+      images: [
+        "images/work/bilaphone_full.jpg?v=2"
+      ]
+    },
     klicko: {
       title: "KLICKO: Smartphones & High-Tech Store",
       subtitle: "Websites • E-Commerce Store",
