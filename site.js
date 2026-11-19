@@ -647,7 +647,7 @@
       deliverables: "E-Commerce Architecture, Admin Dashboard, Product Catalog, WhatsApp Ordering",
       desc: "Plateforme e-commerce moderne dédiée à la vente de smartphones neufs et occasions avec espace gérant (admin dashboard), gestion des commandes et catalogue interactif.",
       images: [
-        "images/work/bilaphone_full.jpg?v=2"
+        "images/work/bilaphone_full.jpg?v=3"
       ]
     },
     klicko: {
